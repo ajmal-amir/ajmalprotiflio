@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajmal Amir Portiflio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a08e64bf6f.js" crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5X4SWZ534P"></script> <!-- Google tag (gtag.js) -->
+<script>
+  window.dataLayer = window.dataLayer || []; // Initialize dataLayer
+  function gtag(){dataLayer.push(arguments);} // Define gtag function
+  gtag('js', new Date()); // Configure gtag with the current date
+
+  gtag('config', 'G-5X4SWZ534P'); // Replace with your Google Analytics measurement ID
+</script>
+</head>
+<body>
+    <div id="header">
+    <div class="container">
+    <nav>
+        <img src="img/logo.jpeg" alt="logo-image" class="logo">
+        <ul id="sideMenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#protfolio">Protfolio</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-circle-xmark" onclick="closeMenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+    </nav>
+</div>
+<!-- <div class="background-image">
+    <img src="img/background.png" alt="backgroundimage" />
+</div> -->
+<div class="header-text">
+    <p>Software Engineer | AI & Full-Stack Developer</p>
+    <h1>Hi, I'm <span>Ajmal</span><br>Amir from Charlotte</h1>
+    <p>Passionate about building intelligent, user-focused applications that merge AI, 
+       human-centered design, and scalable engineering.</p>
+</div>
+<div class="profile-pic">
+    <img src="img/ajmal_amir.jpg" alt="Profile picture of Ajmal Amir">
+  </div>
+  
+</div> <!--end of header section-->
+
+<!--about-->
+<div id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="img/ai_image.jpg" alt="userimage">
+            </div>
+            <div class="about-col-2">
+                <h1 class="subt-title">About Me</h1>
+                <p>
+                    I'm Ajmal Amir — an M.S. in Computer Science candidate (AI & Robotics) at UNC Charlotte (Dec 2025) 
+                    and B.S. in CS graduate (Dec 2024, Dean’s List). I currently serve as a Graduate Teaching Assistant 
+                    and previously worked as a Software Engineer at Astro AI Trading. I specialize in full-stack 
+                    development (Node.js, React, Swift) with strong backend and database skills (MongoDB, MySQL) and 
+                    applied machine learning experience (scikit-learn, pandas, Matplotlib). I have hands-on expertise 
+                    with cloud platforms (Azure) and follow human-centered design principles — conducting user research, 
+                    usability testing, and creating intuitive, accessible UI/UX. My goal is to combine AI innovation 
+                    with thoughtful design to build reliable, user-focused systems.
+                </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab(event,'skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab(event,'experience')">Experiences</p>
+                    <p class="tab-links" onclick="opentab(event,'education')">Education</p>
+                    <p class="tab-links" onclick="opentab(event,'projects')">Projects</p>
+                  </div>
+                  
+
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Programming</span><br>Python, JavaScript, Swift, Java, C, Assembly</li>
+                        <li><span>Web/Mobile Development</span><br>Node.js, React, React Native, Expo, HTML/CSS</li>
+                        <li><span>Databases</span><br>MongoDB, MySQL</li>
+                        <li><span>Machine Learning & AI</span><br>scikit-learn, pandas, Matplotlib, LangChain, LLaMA</li>
+                        <li><span>Cloud & DevOps</span><br>Azure, Git/GitHub</li>
+                        <li><span>Human-Centered Design</span><br>User research, usability testing, accessibility design</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2024 – Present</span><br>Graduate Teaching Assistant – UNC Charlotte</li>
+                        <li><span>2024</span><br>Software Engineer – Astro AI Trading</li>
+                        <li><span>2023 – Present</span><br>Transportation Associate – Amazon.com, Inc (Charlotte)</li>
+                        <li><span>2014 – 2018</span><br>IT Specialist & Administrative Assistant – GARDAWorld Federal Service</li>
+                        <li><span>2013 – 2014</span><br>IT Translator/IT Trainer – DRS Technologies & Eagle System</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2025</span><br>Master of Science in Computer Science (AI & Robotics) – UNC Charlotte</li>
+                        <li><span>2024</span><br>Bachelor of Science in Computer Science – UNC Charlotte (Dean’s List)</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="projects">
+                    <ul>
+                        <li><span>TOM Team Scheduling Board</span><br>Operations scheduling platform for Amazon Transportation; Node.js, MongoDB, EJS</li>
+                        <li><span>LinkUpLegends</span><br>Event management web app with Google Maps integration; Node.js, HTML/CSS</li>
+                        <li><span>StockMarketIQ</span><br>AI-powered stock prediction and analysis tool; Streamlit, Python, ML models</li>
+                        <li><span>Show Me Around</span><br>AI travel assistant with Groq, Google Maps API, and RAG-based recommendations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of About Me Section -->
+
+<!---begining of Portfolio-->
+<div id="protfolio">
+    <div class="container">
+        <h1 class="subt-title">My Work</h1>
+        <div class="work-list">
+
+            <div class="work">
+                <h3>TOM Team Scheduling Board</h3>
+                <img src="img/tometeam.png" alt="TOM Team Scheduling Board">
+                
+                <div class="layer">
+                    <h3>TOM Team Scheduling Board</h3>
+                    <p>
+                        A scheduling platform for Amazon Transportation Associates and Managers, 
+                        built with Node.js, Express, MongoDB, and EJS. Features manual and 
+                        automated task assignment, blueprint integration, and qualification-based 
+                        scheduling to streamline operations.
+                    </p>
+                    <a href="https://github.com/ajmal-amir/TOMTEAMSB.git"
+                    class="private-repo"
+                    data-project="TOM Team Scheduling Board"
+                    aria-haspopup="dialog"
+                    aria-controls="privateRepoModal">
+                    <i class="fa-solid fa-arrow-up-right-from-square">
+                    </i>
+                </a>
+                </div>
+            </div>
+            <div class="work">
+                <h3>StockMarketIQ</h3>
+                <img src="img/markeriq.png"alt="StockMarketIQ Project">
+                <div class="layer">
+                    <h3>StockMarketIQ</h3>
+                    <p>
+                        An AI-powered stock prediction and analysis platform developed with 
+                        Streamlit, Python, and scikit-learn. Provides predictive modeling, 
+                        market trend analysis, and interactive data visualizations for 
+                        informed investment decisions.
+                    </p>
+                    <a href=https://github.com/ajmal-amir/MarketIQ><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <h3>Show Me Around</h3>
+                <img src="img/showmearround.png"alt="Show Me Around Travel Assistant">
+                <div class="layer">
+                    <h3>Show Me Around</h3>
+                    <p>
+                        An AI-driven travel assistant that recommends activities and attractions 
+                        using Groq, Google Maps API, and RAG-based search. Supports natural 
+                        language queries, multi-agent coordination, and real-time attraction details.
+                    </p>
+                    <a href="https://github.com/ajmal-amir/show_me_arround.git"   
+                    class="private-repo"
+                    data-project="Show Me Around"
+                    aria-haspopup="dialog"
+                    aria-controls="privateRepoModal">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </i>
+                </a>
+                </div>
+            </div>
+            <div class="work">
+                <h3>LinkUpLegends</h3>
+                <img src="img/linkeduplgends1.png" alt="LinkUpLegends Event Platform">
+                <div class="layer">
+                    <h3>LinkUpLegends</h3>
+                    <p>
+                        An event management web app enabling users to create, discover, and 
+                        manage events with RSVP tracking and Google Maps integration. 
+                        Developed using Node.js, HTML/CSS, and MongoDB with a responsive, 
+                        user-friendly design.
+                    </p>
+                    <a href="https://github.com/ajmal-amir/LinkUpLegends_Website.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="work">
+                <h3>FreeCodeCamp Responsive Web Design Certificate</h3>
+                <img src="img/project_place_holders.webp"alt="FreeCodeCamp Responsive Web Design Certificate">
+                <div class="layer">
+                    <h3>FreeCodeCamp Responsive Web Design Certificate</h3>
+                    <p>
+                        Completed 300+ hours of coursework covering HTML, CSS, Flexbox, and CSS Grid. 
+                        Demonstrates expertise in creating responsive, accessible, and visually appealing 
+                        websites for diverse audiences.
+                    </p>
+                    <a href="https://www.freecodecamp.org/certification/fcc4ff68df6-d822-49d3-b532-1fbb7f189928/responsive-web-design">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <a href="#" class="btn">See More</a>
+    </div>
+</div>
+<!---End of profitlio-->
+<!--Begining of Services------->
+<div id="services">
+    <div class="container">
+        <h1 class="subt-title">My Services</h1>
+        <div class="services-list">
+            
+            <div>
+                <i class="fa-solid fa-laptop-code"></i>
+                <h2>Full-Stack Development</h2>
+                <p>
+                    End-to-end development of web and mobile applications using modern frameworks and technologies 
+                    like Node.js, React, React Native, and Swift — from concept to deployment.
+                </p>
+                <a href="#">Learn More</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web & UI/UX Design</h2>
+                <p>
+                    Design and build responsive, user-friendly websites following 
+                    human-centered design principles, ensuring accessibility and intuitive navigation.
+                </p>
+                <a href="#">Learn More</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>Database Design & Administration</h2>
+                <p>
+                    Design, manage, and optimize databases using MongoDB and MySQL, 
+                    ensuring security, scalability, and efficient data retrieval.
+                </p>
+                <a href="#">Learn More</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-robot"></i>
+                <h2>AI & Machine Learning Solutions</h2>
+                <p>
+                    Develop intelligent applications using machine learning models, 
+                    data analysis tools, and AI frameworks like scikit-learn, LangChain, and LLaMA.
+                </p>
+                <a href="#">Learn More</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-user-check"></i>
+                <h2>Human-Centered Design & Usability Testing</h2>
+                <p>
+                    Conduct user research, interviews, and usability tests to create designs 
+                    that meet real user needs while ensuring accessibility and inclusivity.
+                </p>
+                <a href="#">Learn More</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-sitemap"></i>
+                <h2>Software Architecture & Cloud Solutions</h2>
+                <p>
+                    Architect scalable, secure, and high-performance systems, 
+                    leveraging cloud platforms like Microsoft Azure for deployment and integration.
+                </p>
+                <a href="#">Learn More</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-book"></i>
+                <h2>Technical Documentation & Training</h2>
+                <p>
+                    Produce clear technical documentation and deliver training sessions 
+                    for teams and end-users, ensuring smooth adoption of tools and systems.
+                </p>
+                <a href="#">Learn More</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--End of Services-->
+<!--Begining of Contact-->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="subt-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> qasim.aimal@gmail.com</p>
+                <p><i class="fa-solid fa-mobile-screen-button"></i> 704-713-8325</p>
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/ajmal-amir-0549159a/"><i class="fa-brands fa-linkedin"></i></i></a>
+                    <a href="https://github.com/ajmal-amir"><i class="fa-brands fa-github"></i></i></a>
+                    <a href="https://www.instagram.com/qasim_aimal/"><i class="fa-brands fa-instagram"></i></i></a>
+                </div>
+                <a href="img/Ajmal_Amir_Resume.docx" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="name" id="name" placeholder="your Name" required>
+                    <input type="email" name="email" id="email" placeholder="Your Email" required>
+                    <textarea name="message" id="message" cols="22" rows="5"></textarea>
+                  
+                    <!-- Honeypot (bots fill this; humans never see it) -->
+                    <input type="text"
+                           name="company"
+                           id="company"
+                           autocomplete="off"
+                           tabindex="-1"
+                           aria-hidden="true"
+                           style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
+                  
+                    <!-- Hidden timestamp to block instant bot submits -->
+                    <input type="hidden" name="form_ts" id="form_ts">
+                  
+                    <button type="submit" class="btn btn2">Submit</button>
+                  </form>
+                  
+                <span id="msg"></span>
+
+            </div>
+        </div>
+    </div>
+    <div class="visit-counter">
+  Visitors: <span id="visitCount">—</span>
+  <img id="visitBadge" alt="Visitors"
+       style="display:none; vertical-align:middle; margin-left:6px;"
+       src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fajmal-amir.github.io%2FPortfolio%2F&count_bg=%2379C83D&title_bg=%23555555&title=Visitors&edge_flat=false">
+</div>
+
+    <div class="copyright">
+        <p>Designed <i class="fa-solid fa-hand-holding-heart"></i><a href="https://github.com/ajmal-amir"> by Ajmal Amir </a> &copy; 2025</p>
+        <div class="visit-counter">Visitors: <span id="visitCount">—</span></div>
+
+    </div>
+</div>
+
+<!-- Private Repo Modal -->
+<div id="privateRepoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card" role="document">
+      <button class="modal__close" type="button" aria-label="Close" data-close>&times;</button>
+      <h3 id="modalTitle">Access by Request</h3>
+      <p>
+        <strong><span id="modalProject">This repository</span></strong> is currently private to protect data privacy and application ownership.
+        If you’d like to review the code for evaluation purposes, please contact me via the form below and I will add you as a collaborator.
+      </p>
+      <p style="margin-top:6px;">
+        When contacting me, please include your GitHub username and the project name.
+      </p>
+      <div class="modal__actions">
+        <a href="#contact" class="btn btn2">Open Contact Form</a>
+        <button type="button" class="btn" data-close>Close</button>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+<script src="js/script.js"></script>
+</html>
