@@ -23,6 +23,9 @@ https://script.google.com/u/0/home/projects/1HttZA4IJl3RsfAwSqEPrrDrN24fCM6ygCo-
 
 */
 
+/* this is for opnening the chatbot */
+
+
 /* Google Sheet form submit (hardened) */
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbzfj5cQ51aIpdM7EKL3KEwQZPWx7DKViTO51Sz0CEkaO16M_i2LBQUb9uwOAsC0ONj0/exec";
@@ -192,7 +195,7 @@ function closePrivateRepoModal(modal) {
 // close buttons & backdrop
 document.querySelectorAll("#privateRepoModal [data-close]").forEach((el) => {
   el.addEventListener("click", () =>
-    closePrivateRepoModal(document.getElementById("privateRepoModal"))
+    closePrivateRepoModal(document.getElementById("privateRepoModal")),
   );
 });
 
@@ -201,28 +204,32 @@ document.querySelectorAll("#privateRepoModal [data-close]").forEach((el) => {
 //      If it fails, we show a badge image counter that works without JS.
 // WHERE: Put this at the end of js/script.js
 
-const COUNT_NS      = "ajmal-amir-portfolio"; // keep stable
-const COUNT_KEY     = "portfolio";            // your page key (Portfolio = home)
+const COUNT_NS = "ajmal-amir-portfolio"; // keep stable
+const COUNT_KEY = "portfolio"; // your page key (Portfolio = home)
 const COUNT_SPAN_ID = "visitCount";
-const BADGE_ID      = "visitBadge";
+const BADGE_ID = "visitBadge";
 
 // Set to true temporarily to see it increment on every refresh (testing only)
 const FORCE_HIT_ON_EVERY_LOAD = false;
 
-async function updateVisitorCounter(){
-  const span  = document.getElementById(COUNT_SPAN_ID);
+async function updateVisitorCounter() {
+  const span = document.getElementById(COUNT_SPAN_ID);
   const badge = document.getElementById(BADGE_ID);
   if (!span) return;
 
   // Build endpoints
   const base = "https://api.countapi.xyz";
-  const hit  = `${base}/hit/${encodeURIComponent(COUNT_NS)}/${encodeURIComponent(COUNT_KEY)}`;
-  const get  = `${base}/get/${encodeURIComponent(COUNT_NS)}/${encodeURIComponent(COUNT_KEY)}`;
+  const hit = `${base}/hit/${encodeURIComponent(COUNT_NS)}/${encodeURIComponent(COUNT_KEY)}`;
+  const get = `${base}/get/${encodeURIComponent(COUNT_NS)}/${encodeURIComponent(COUNT_KEY)}`;
 
   // De-dup: only +1 once per day per browser unless FORCE_HIT... is true
-  const today   = new Date().toISOString().slice(0,10);
+  const today = new Date().toISOString().slice(0, 10);
   const lastHit = localStorage.getItem("count_hit_portfolio_date");
-  const endpoint = FORCE_HIT_ON_EVERY_LOAD ? hit : (lastHit === today ? get : hit);
+  const endpoint = FORCE_HIT_ON_EVERY_LOAD
+    ? hit
+    : lastHit === today
+      ? get
+      : hit;
 
   try {
     const res = await fetch(endpoint, { cache: "no-store" });
@@ -246,6 +253,3 @@ async function updateVisitorCounter(){
 }
 
 document.addEventListener("DOMContentLoaded", updateVisitorCounter);
-
-
-

@@ -1,0 +1,480 @@
+#ajmal-bot {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 360px;
+  max-width: calc(100vw - 40px);
+  background: #0b0b0b;
+  color: #fff;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+
+  
+}
+
+/* Strong visible border on black background */
+#ajmal-bot {
+  border: 1px solid rgba(235, 9, 9, 0.22);           /* brighter */
+  outline: 1px solid rgba(186, 90, 175, 0.25);            /* subtle glow tint */
+  outline-offset: 0;
+  box-shadow:
+    0 10px 30px rgba(213, 3, 3, 0.35),
+    0 0 0 1px rgba(140, 12, 12, 0.06),                    /* crisp edge */
+    0 0 18px rgba(182, 45, 104, 0.12);                       /* soft glow */
+}
+
+
+#ajmal-bot header {
+  padding: 12px 14px;
+  background: #111;
+  border-bottom: 1px solid #2a2a2a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#ajmal-bot header .title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#ajmal-bot .body {
+  height: 320px;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.msg {
+  margin: 10px 0;
+  line-height: 1.35;
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+.msg.user { color: #ddd; }
+.msg.bot  { color: #fff; }
+
+#ajmal-bot .footer {
+  padding: 10px;
+  border-top: 1px solid #2a2a2a;
+  display: flex;
+  gap: 8px;
+}
+
+#ajmal-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+#ajmal-send, #ajmal-mic, #ajmal-mode {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #151515;
+  color: #fff;
+  cursor: pointer;
+}
+
+#ajmal-mode {
+  width: 90px;
+}
+
+/* Make line breaks show properly inside chat bubbles */
+.msg {
+  white-space: pre-wrap;       /* preserves \n */
+  word-wrap: break-word;
+  margin: 10px 0;
+  line-height: 1.35;
+  font-size: 13px;
+
+  /* bubble look */
+  padding: 10px 12px;
+  border-radius: 12px;
+  max-width: 85%;
+  display: inline-block;
+}
+
+/* Align user messages to the RIGHT */
+.msg.user {
+  background: #1f2937;         /* dark gray */
+  color: #fff;
+  margin-left: auto;           /* pushes bubble to right */
+  text-align: left;
+  border: 1px solid #374151;
+}
+
+/* Align bot messages to the LEFT */
+.msg.bot {
+  background: #0f172a;         /* deep navy */
+  color: #fff;
+  margin-right: auto;          /* stays on left */
+  border: 1px solid #1f2a44;
+}
+
+/* A row wrapper that controls alignment (optional but helps) */
+.msg-row {
+  display: flex;
+}
+
+/* Right-align user row, left-align bot row */
+.msg-row.user { justify-content: flex-end; }
+.msg-row.bot  { justify-content: flex-start; }
+
+/* Typing indicator bubble */
+.msg.typing {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  color: #bbb;
+}
+
+/* Three dots typing animation */
+.typing-dots {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.typing-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #bbb;
+  opacity: 0.35;
+  animation: vbDots 1.1s infinite;
+}
+
+.typing-dots span:nth-child(2) { animation-delay: 0.15s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.30s; }
+
+@keyframes vbDots {
+  0%, 100% { transform: translateY(0); opacity: 0.35; }
+  50%      { transform: translateY(-3px); opacity: 1; }
+}
+
+
+/* ---------- Siri-like Speaking Overlay ---------- */
+#siri-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: none;                 /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;               /* above everything */
+}
+
+#siri-overlay.active {
+  display: flex;
+}
+
+#siri-card {
+  width: min(520px, calc(100vw - 40px));
+  padding: 26px 22px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(10, 10, 10, 0.65);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+  text-align: center;
+  color: #fff;
+}
+
+/* =========================
+   Siri Overlay — Color Upgrade
+   (paste at END of widget.css)
+   ========================= */
+
+/* Stronger “dim” + subtle color wash */
+#siri-overlay {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(120, 60, 255, 0.18), rgba(0,0,0,0) 55%),
+    radial-gradient(circle at 30% 70%, rgba(0, 200, 255, 0.16), rgba(0,0,0,0) 55%),
+    radial-gradient(circle at 70% 70%, rgba(255, 60, 160, 0.14), rgba(0,0,0,0) 55%),
+    rgba(0,0,0,0.68);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Card looks more premium */
+#siri-card {
+  border: 1px solid rgba(255,255,255,0.18);
+  background:
+    linear-gradient(180deg, rgba(20,20,30,0.72), rgba(10,10,12,0.72));
+  box-shadow:
+    0 24px 80px rgba(0,0,0,0.65),
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 0 40px rgba(120,60,255,0.18);
+}
+
+/* Slightly larger, cleaner typography */
+#siri-title {
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  opacity: 0.9;
+}
+
+#siri-status {
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  opacity: 0.95;
+}
+
+/* Colorful orb core */
+#siri-orb {
+  width: 170px;
+  height: 170px;
+}
+
+#siri-orb::before {
+  background:
+    radial-gradient(circle at 30% 30%,
+      rgba(255,255,255,0.22),
+      rgba(255,255,255,0.06) 35%,
+      rgba(0,0,0,0) 70%),
+    radial-gradient(circle at 50% 50%,
+      rgba(0, 220, 255, 0.20),
+      rgba(120, 60, 255, 0.18) 45%,
+      rgba(255, 60, 160, 0.14) 70%,
+      rgba(0,0,0,0) 85%);
+  opacity: 1;
+}
+
+/* Make rings colorful + more dynamic */
+.orb-ring {
+  border: 2px solid rgba(255,255,255,0.10);
+  box-shadow:
+    0 0 22px rgba(0, 220, 255, 0.12),
+    0 0 26px rgba(120, 60, 255, 0.12),
+    0 0 30px rgba(255, 60, 160, 0.10);
+  animation: orbPulseColor 1.15s infinite ease-in-out;
+}
+
+.orb-ring:nth-child(1) {
+  border-color: rgba(0, 220, 255, 0.18);
+}
+.orb-ring:nth-child(2) {
+  border-color: rgba(120, 60, 255, 0.18);
+}
+.orb-ring:nth-child(3) {
+  border-color: rgba(255, 60, 160, 0.16);
+}
+
+/* More “Siri-like” pulsing */
+@keyframes orbPulseColor {
+  0%   { opacity: 0.30; transform: scale(1);   filter: saturate(1.05); }
+  45%  { opacity: 0.85; transform: scale(1.12); filter: saturate(1.35); }
+  100% { opacity: 0.30; transform: scale(1);   filter: saturate(1.05); }
+}
+
+/* Button matches the new vibe */
+#siri-stop {
+  border: 1px solid rgba(255,255,255,0.22);
+  background:
+    linear-gradient(135deg,
+      rgba(0, 220, 255, 0.10),
+      rgba(120, 60, 255, 0.12),
+      rgba(255, 60, 160, 0.10));
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.45),
+    0 0 18px rgba(120,60,255,0.18);
+}
+
+#siri-stop:hover {
+  background:
+    linear-gradient(135deg,
+      rgba(0, 220, 255, 0.14),
+      rgba(120, 60, 255, 0.16),
+      rgba(255, 60, 160, 0.14));
+}
+
+
+
+#siri-title {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 12px;
+}
+
+/* Orb container */
+#siri-orb {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 14px auto;
+  border-radius: 50%;
+  position: relative;
+  filter: drop-shadow(0 12px 22px rgba(0,0,0,0.6));
+}
+
+/* Soft glowing core */
+#siri-orb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), rgba(255,255,255,0.05) 40%, rgba(0,0,0,0) 70%);
+  opacity: 0.8;
+}
+
+/* Animated ring layers */
+.orb-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.08);
+  animation: orbPulse 1.3s infinite ease-in-out;
+}
+
+.orb-ring:nth-child(2) { animation-delay: 0.20s; transform: scale(1.08); }
+.orb-ring:nth-child(3) { animation-delay: 0.40s; transform: scale(1.16); }
+
+@keyframes orbPulse {
+  0%   { opacity: 0.25; transform: scale(1); }
+  50%  { opacity: 0.75; transform: scale(1.10); }
+  100% { opacity: 0.25; transform: scale(1); }
+}
+
+#siri-status {
+  font-size: 13px;
+  opacity: 0.90;
+  margin-bottom: 14px;
+}
+
+/* Optional cancel button */
+#siri-stop {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  cursor: pointer;
+}
+#siri-stop:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+
+#ajmal-mic.recording {
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.12);
+}
+
+
+/* Header actions container */
+#ajmal-bot header {
+  gap: 10px;
+}
+
+#ajmal-bot header .header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Close button */
+#ajmal-close {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #151515;
+  color: #fff;
+  cursor: pointer;
+}
+
+#ajmal-close:hover {
+  background: #1d1d1d;
+}
+
+/* Minimized state: hide body + footer */
+#ajmal-bot.minimized .body,
+#ajmal-bot.minimized .footer {
+  display: none;
+}
+
+/* Optional: shrink widget when minimized (header only) */
+#ajmal-bot.minimized {
+  width: 280px;
+}
+
+/* Floating “Open” pill/button */
+#ajmal-open {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999998;
+  display: none;               /* only show when minimized */
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(20,20,20,0.85);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.55);
+}
+
+#ajmal-open.active {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#ajmal-open:hover {
+  background: rgba(30,30,30,0.9);
+}
+
+/* Bigger OPEN icon button */
+#ajmal-close.open-mode {
+  width: 56px;
+  height: 52px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+}
+
+/* Bigger icon itself */
+#ajmal-close.open-mode .ajmal-open-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+#ajmal-close.open-mode:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+/* When minimized, reuse the same button as "Open Ajmal AI" */
+#ajmal-close.open-mode {
+  width: auto;
+  padding: 10px 12px;
+  font-size: 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.10);
+}
+
+#ajmal-close.open-mode:hover {
+  background: rgba(255,255,255,0.16);
+}

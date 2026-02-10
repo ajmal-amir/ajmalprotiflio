@@ -6,6 +6,7 @@
     <title>Ajmal Amir Portiflio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/a08e64bf6f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="widget.css" />
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5X4SWZ534P"></script> <!-- Google tag (gtag.js) -->
 <script>
@@ -27,6 +28,7 @@
             <li><a href="#protfolio">Protfolio</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#" id="open-ajmal-ai">Ajmal Amir AI Bot</a></li>
             <i class="fa-solid fa-circle-xmark" onclick="closeMenu()"></i>
         </ul>
         <i class="fa-solid fa-bars" onclick="openMenu()"></i>
@@ -372,6 +374,35 @@
   </div>
   
 </body>
-
+<script src="widget.js"></script>
 <script src="js/script.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const openLink = document.getElementById("open-ajmal-ai");
+  if (!openLink) return;
+
+  openLink.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const bot = document.getElementById("ajmal-bot");
+    if (bot) bot.classList.remove("minimized");
+
+    // If you use the close button "open-mode", also reset it to normal close state
+    const closeBtn = document.getElementById("ajmal-close");
+    if (closeBtn) {
+      closeBtn.textContent = "✕";
+      closeBtn.title = "Close";
+      closeBtn.classList.remove("open-mode");
+    }
+
+    // Optional: scroll chat to bottom so it looks active
+    const body = document.getElementById("ajmal-body");
+    if (body) body.scrollTop = body.scrollHeight;
+  });
+});
+  </script>
+
+
 </html>
