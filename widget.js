@@ -283,15 +283,25 @@ function listenUserUtterance({
       rec.continuous = true;
 
       rec.onresult = (event) => {
-        hasHeardSpeech = true;
+        let finalText = "";
 
-        let latest = "";
         for (let i = event.resultIndex; i < event.results.length; i++) {
-          latest += event.results[i][0].transcript;
+          const res = event.results[i];
+
+          // Only store FINAL recognized text
+          if (res.isFinal) {
+            finalText += res[0].transcript + " ";
+            hasHeardSpeech = true;
+          }
         }
 
-        transcript = (transcript + " " + latest).replace(/\s+/g, " ").trim();
-        armSilenceTimer();
+        if (finalText) {
+          transcript = (transcript + " " + finalText)
+            .replace(/\s+/g, " ")
+            .trim();
+
+          armSilenceTimer();
+        }
       };
 
       rec.onerror = (e) => {
