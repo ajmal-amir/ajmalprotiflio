@@ -17,6 +17,8 @@
 const API_BASE =
   "https://ajmalamirairecruiterassistant-production.up.railway.app";
 
+// const API_BASE = "http://localhost:8000";
+
 // Silence window (5–8 seconds). Using 7 seconds default.
 const SILENCE_START_WAIT_MS = 7000;
 
