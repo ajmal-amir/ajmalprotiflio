@@ -522,26 +522,35 @@ function mount() {
   const bot = document.createElement("div");
   bot.id = "ajmal-bot";
 
+  bot.setAttribute("role", "region");
+  bot.setAttribute("aria-label", "Ajmal AI Recruiter Assistant");
+
   bot.innerHTML = `
   <header>
-    <div class="title">Ajmal AI Recruiter Assistant</div>
+    <div class="title">
+      <img src="img/web/ajmalai-icon.png" alt="" class="ajmal-avatar" width="32" height="32" />
+      <span>
+        <span class="title-main">Ajmal AI Recruiter Assistant</span>
+        <span class="title-sub">Ask about my projects, skills &amp; experience</span>
+      </span>
+    </div>
 
     <div class="header-actions">
-      <select id="ajmal-mode" title="Answer style">
+      <select id="ajmal-mode" title="Answer style" aria-label="Answer style">
         <option value="short" selected>Short</option>
         <option value="detailed">Detailed</option>
       </select>
 
-      <button id="ajmal-close" title="Close">✕</button>
+      <button id="ajmal-close" type="button" title="Close">✕</button>
     </div>
   </header>
 
-  <div class="body" id="ajmal-body"></div>
+  <div class="body" id="ajmal-body" role="log" aria-live="polite"></div>
 
   <div class="footer">
-    <input id="ajmal-input" placeholder="Ask about my projects, skills, or experience..." />
-    <button id="ajmal-send">Send</button>
-    <button id="ajmal-mic" title="Talk (voice session)">🎙</button>
+    <input id="ajmal-input" aria-label="Your question" placeholder="Ask about my projects, skills, or experience..." />
+    <button id="ajmal-send" type="button">Send</button>
+    <button id="ajmal-mic" type="button" title="Talk (voice session)" aria-label="Start voice conversation">🎙</button>
   </div>
 `;
 
@@ -611,32 +620,28 @@ function mount() {
   function setCloseButtonOpenMode(isMinimized) {
     if (isMinimized) {
       // Use your PNG icon
-      closeBtn.innerHTML = `<img src="ajmalai.png" alt="Open Ajmal AI" class="ajmal-open-icon" />`;
+      closeBtn.innerHTML = `<span class="ajmal-open-label">Ask Ajmal AI</span>`;
       closeBtn.title = "Open Ajmal AI";
-      closeBtn.setAttribute("aria-label", "Open Ajmal AI");
+      closeBtn.setAttribute("aria-label", "Open Ajmal AI Recruiter Assistant");
+      closeBtn.setAttribute("aria-expanded", "false");
       closeBtn.classList.add("open-mode");
     } else {
       closeBtn.textContent = "✕";
       closeBtn.title = "Close";
-      closeBtn.setAttribute("aria-label", "Close");
+      closeBtn.setAttribute("aria-label", "Close assistant");
+      closeBtn.setAttribute("aria-expanded", "true");
       closeBtn.classList.remove("open-mode");
     }
   }
 
-  // Default: not minimized
-  setCloseButtonOpenMode(false);
+  function openBot({ focus = true } = {}) {
+    bot.classList.remove("minimized");
+    setCloseButtonOpenMode(false);
+    body.scrollTop = body.scrollHeight;
+    if (focus) input.focus({ preventScroll: true });
+  }
 
-  closeBtn.addEventListener("click", () => {
-    const isMinimized = bot.classList.contains("minimized");
-
-    // If minimized, OPEN it
-    if (isMinimized) {
-      bot.classList.remove("minimized");
-      setCloseButtonOpenMode(false);
-      return;
-    }
-
-    // Otherwise CLOSE it (minimize)
+  function minimizeBot() {
     // If voice session is active, stop it so overlay doesn’t stay open
     voiceSessionStopRequested = true;
     voiceSessionActive = false;
@@ -646,7 +651,26 @@ function mount() {
 
     bot.classList.add("minimized");
     setCloseButtonOpenMode(true);
+  }
+
+  // Default: start as a compact launcher so it never covers page content
+  bot.classList.add("minimized");
+  setCloseButtonOpenMode(true);
+
+  closeBtn.addEventListener("click", () => {
+    // If minimized, OPEN it; otherwise CLOSE it (minimize)
+    if (bot.classList.contains("minimized")) openBot();
+    else minimizeBot();
   });
+
+  // When minimized, the whole launcher pill is clickable
+  bot.querySelector("header").addEventListener("click", (e) => {
+    if (e.target.closest("#ajmal-close")) return;
+    if (bot.classList.contains("minimized")) openBot();
+  });
+
+  // Public hooks for page buttons ("Ajmal Amir AI Bot", "Try it live")
+  window.AjmalBot = { open: openBot, close: minimizeBot };
 
   // Open/restore
   // openPill.addEventListener("click", () => {

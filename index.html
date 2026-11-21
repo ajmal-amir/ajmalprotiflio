@@ -1,414 +1,764 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajmal Amir Portiflio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a08e64bf6f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="widget.css" />
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5X4SWZ534P"></script> <!-- Google tag (gtag.js) -->
-<script>
-  window.dataLayer = window.dataLayer || []; // Initialize dataLayer
-  function gtag(){dataLayer.push(arguments);} // Define gtag function
-  gtag('js', new Date()); // Configure gtag with the current date
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajmal Amir — Software Engineer | AI &amp; Robotics</title>
+  <meta name="description" content="Ajmal Amir is a full-stack software engineer in Charlotte, NC with an M.S. in Computer Science (AI & Robotics) from UNC Charlotte, building secure web, mobile, and AI applications with Python, React, Node.js, and FastAPI.">
+  <meta name="author" content="Ajmal Amir">
+  <meta name="theme-color" content="#020B1B">
+  <link rel="canonical" href="https://www.ajmalamir.com/">
 
-  gtag('config', 'G-5X4SWZ534P'); // Replace with your Google Analytics measurement ID
-</script>
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ajmal Amir">
+  <meta property="og:url" content="https://www.ajmalamir.com/">
+  <meta property="og:title" content="Ajmal Amir — Software Engineer | AI & Robotics">
+  <meta property="og:description" content="Full-stack software engineer building scalable, secure, user-centered web, mobile, and AI applications.">
+  <meta property="og:image" content="https://www.ajmalamir.com/img/heroiamge.jpg">
+  <meta property="og:image:alt" content="Ajmal Amir in a modern engineering office">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ajmal Amir — Software Engineer | AI & Robotics">
+  <meta name="twitter:description" content="Full-stack software engineer building scalable, secure, user-centered web, mobile, and AI applications.">
+  <meta name="twitter:image" content="https://www.ajmalamir.com/img/heroiamge.jpg">
+
+  <link rel="icon" type="image/png" href="img/web/favicon.png">
+  <link rel="apple-touch-icon" href="img/web/apple-touch-icon.png">
+
+  <script>document.documentElement.classList.add("js");</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/web/hero.webp" type="image/webp">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="widget.css">
+  <script src="https://kit.fontawesome.com/a08e64bf6f.js" crossorigin="anonymous"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5X4SWZ534P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5X4SWZ534P');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ajmal Amir",
+    "jobTitle": "Software Engineer",
+    "url": "https://www.ajmalamir.com/",
+    "address": { "@type": "PostalAddress", "addressLocality": "Charlotte", "addressRegion": "NC", "addressCountry": "US" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of North Carolina at Charlotte" },
+    "worksFor": { "@type": "Organization", "name": "Wells Fargo" },
+    "sameAs": ["https://www.linkedin.com/in/ajmal-amir-0549159a/", "https://github.com/ajmal-amir"]
+  }
+  </script>
 </head>
 <body>
-    <div id="header">
-    <div class="container">
-    <nav>
-        <img src="img/logo.jpeg" alt="logo-image" class="logo">
-        <ul id="sideMenu">
-            <li><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#protfolio">Protfolio</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#" id="open-ajmal-ai">Ajmal Amir AI Bot</a></li>
-            <i class="fa-solid fa-circle-xmark" onclick="closeMenu()"></i>
-        </ul>
-        <i class="fa-solid fa-bars" onclick="openMenu()"></i>
-    </nav>
-</div>
-<!-- <div class="background-image">
-    <img src="img/background.png" alt="backgroundimage" />
-</div> -->
-<div class="header-text">
-    <p>Software Engineer | AI & Full-Stack Developer</p>
-    <h1>Hi, I'm <span>Ajmal</span><br>Amir from Charlotte</h1>
-    <p>Passionate about building intelligent, user-focused applications that merge AI, 
-       human-centered design, and scalable engineering.</p>
-</div>
-<div class="profile-pic">
-    <img src="img/ajmal_amir.jpg" alt="Profile picture of Ajmal Amir">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="site-header" id="header">
+  <nav class="nav container" aria-label="Primary">
+    <a class="brand" href="#home" aria-label="Ajmal Amir — home">
+      <picture>
+        <source srcset="img/web/logo-mark.webp" type="image/webp">
+        <img src="img/web/logo-mark.png" alt="" width="56" height="37" class="brand__logo">
+      </picture>
+      <span class="brand__name">Ajmal Amir</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#home" data-nav="home">Home</a></li>
+        <li><a href="#about" data-nav="about">About</a></li>
+        <li><a href="#projects" data-nav="projects">Projects</a></li>
+        <li><a href="#services" data-nav="services">Services</a></li>
+        <li><a href="#experience" data-nav="experience">Experience</a></li>
+        <li><a href="#skills" data-nav="skills">Skills</a></li>
+        <li><a href="#contact" data-nav="contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button type="button" id="open-ajmal-ai" class="btn-icon" data-open-chat aria-label="Open Ajmal AI Recruiter Assistant" title="Ask my AI Recruiter Assistant">
+          <i class="fa-solid fa-robot" aria-hidden="true"></i><span class="nav-actions__label">Ajmal Amir AI Bot</span>
+        </button>
+        <a class="btn btn--outline btn--sm" href="img/Ajmal_Amir%20Resume.pdf" download="Ajmal_Amir_Resume.pdf">
+          <i class="fa-solid fa-download" aria-hidden="true"></i> Download Résumé
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="hero__media">
+    <picture>
+      <source srcset="img/web/hero.webp" type="image/webp">
+      <img src="img/heroiamge.jpg" alt="Ajmal Amir, arms crossed, in a modern engineering office" width="2141" height="692" fetchpriority="high">
+    </picture>
   </div>
-  
-</div> <!--end of header section-->
+  <div class="hero__shade" aria-hidden="true"></div>
 
-<!--about-->
-<div id="about" class="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="img/ai_image.jpg" alt="userimage">
-            </div>
-            <div class="about-col-2">
-                <h1 class="subt-title">About Me</h1>
-                <p>
-                    I'm Ajmal Amir — an M.S. in Computer Science candidate (AI & Robotics) at UNC Charlotte (Dec 2025) 
-                    and B.S. in CS graduate (Dec 2024, Dean’s List). I currently serve as a Graduate Teaching Assistant 
-                    and previously worked as a Software Engineer at Astro AI Trading. I specialize in full-stack 
-                    development (Node.js, React, Swift) with strong backend and database skills (MongoDB, MySQL) and 
-                    applied machine learning experience (scikit-learn, pandas, Matplotlib). I have hands-on expertise 
-                    with cloud platforms (Azure) and follow human-centered design principles — conducting user research, 
-                    usability testing, and creating intuitive, accessible UI/UX. My goal is to combine AI innovation 
-                    with thoughtful design to build reliable, user-focused systems.
-                </p>
-
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab(event,'skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab(event,'experience')">Experiences</p>
-                    <p class="tab-links" onclick="opentab(event,'education')">Education</p>
-                    <p class="tab-links" onclick="opentab(event,'projects')">Projects</p>
-                  </div>
-                  
-
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Programming</span><br>Python, JavaScript, Swift, Java, C, Assembly</li>
-                        <li><span>Web/Mobile Development</span><br>Node.js, React, React Native, Expo, HTML/CSS</li>
-                        <li><span>Databases</span><br>MongoDB, MySQL</li>
-                        <li><span>Machine Learning & AI</span><br>scikit-learn, pandas, Matplotlib, LangChain, LLaMA</li>
-                        <li><span>Cloud & DevOps</span><br>Azure, Git/GitHub</li>
-                        <li><span>Human-Centered Design</span><br>User research, usability testing, accessibility design</li>
-                    </ul>
-                </div>
-
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>2024 – Present</span><br>Graduate Teaching Assistant – UNC Charlotte</li>
-                        <li><span>2024</span><br>Software Engineer – Astro AI Trading</li>
-                        <li><span>2023 – Present</span><br>Transportation Associate – Amazon.com, Inc (Charlotte)</li>
-                        <li><span>2014 – 2018</span><br>IT Specialist & Administrative Assistant – GARDAWorld Federal Service</li>
-                        <li><span>2013 – 2014</span><br>IT Translator/IT Trainer – DRS Technologies & Eagle System</li>
-                    </ul>
-                </div>
-
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>2025</span><br>Master of Science in Computer Science (AI & Robotics) – UNC Charlotte</li>
-                        <li><span>2024</span><br>Bachelor of Science in Computer Science – UNC Charlotte (Dean’s List)</li>
-                    </ul>
-                </div>
-
-                <div class="tab-contents" id="projects">
-                    <ul>
-                        <li><span>TOM Team Scheduling Board</span><br>Operations scheduling platform for Amazon Transportation; Node.js, MongoDB, EJS</li>
-                        <li><span>LinkUpLegends</span><br>Event management web app with Google Maps integration; Node.js, HTML/CSS</li>
-                        <li><span>StockMarketIQ</span><br>AI-powered stock prediction and analysis tool; Streamlit, Python, ML models</li>
-                        <li><span>Show Me Around</span><br>AI travel assistant with Groq, Google Maps API, and RAG-based recommendations</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End of About Me Section -->
-
-<!---begining of Portfolio-->
-<div id="protfolio">
-    <div class="container">
-        <h1 class="subt-title">My Work</h1>
-        <div class="work-list">
-
-            <div class="work">
-                <h3>TOM Team Scheduling Board</h3>
-                <img src="img/tometeam.png" alt="TOM Team Scheduling Board">
-                
-                <div class="layer">
-                    <h3>TOM Team Scheduling Board</h3>
-                    <p>
-                        A scheduling platform for Amazon Transportation Associates and Managers, 
-                        built with Node.js, Express, MongoDB, and EJS. Features manual and 
-                        automated task assignment, blueprint integration, and qualification-based 
-                        scheduling to streamline operations.
-                    </p>
-                    <a href="https://github.com/ajmal-amir/TOMTEAMSB.git"
-                    class="private-repo"
-                    data-project="TOM Team Scheduling Board"
-                    aria-haspopup="dialog"
-                    aria-controls="privateRepoModal">
-                    <i class="fa-solid fa-arrow-up-right-from-square">
-                    </i>
-                </a>
-                </div>
-            </div>
-            <div class="work">
-                <h3>StockMarketIQ</h3>
-                <img src="img/markeriq.png"alt="StockMarketIQ Project">
-                <div class="layer">
-                    <h3>StockMarketIQ</h3>
-                    <p>
-                        An AI-powered stock prediction and analysis platform developed with 
-                        Streamlit, Python, and scikit-learn. Provides predictive modeling, 
-                        market trend analysis, and interactive data visualizations for 
-                        informed investment decisions.
-                    </p>
-                    <a href=https://github.com/ajmal-amir/MarketIQ><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <h3>Show Me Around</h3>
-                <img src="img/showmearround.png"alt="Show Me Around Travel Assistant">
-                <div class="layer">
-                    <h3>Show Me Around</h3>
-                    <p>
-                        An AI-driven travel assistant that recommends activities and attractions 
-                        using Groq, Google Maps API, and RAG-based search. Supports natural 
-                        language queries, multi-agent coordination, and real-time attraction details.
-                    </p>
-                    <a href="https://github.com/ajmal-amir/show_me_arround.git"   
-                    class="private-repo"
-                    data-project="Show Me Around"
-                    aria-haspopup="dialog"
-                    aria-controls="privateRepoModal">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </i>
-                </a>
-                </div>
-            </div>
-            <div class="work">
-                <h3>LinkUpLegends</h3>
-                <img src="img/linkeduplgends1.png" alt="LinkUpLegends Event Platform">
-                <div class="layer">
-                    <h3>LinkUpLegends</h3>
-                    <p>
-                        An event management web app enabling users to create, discover, and 
-                        manage events with RSVP tracking and Google Maps integration. 
-                        Developed using Node.js, HTML/CSS, and MongoDB with a responsive, 
-                        user-friendly design.
-                    </p>
-                    <a href="https://github.com/ajmal-amir/LinkUpLegends_Website.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-
-          <div class="work">
-            <h3>AI Recruiter Assistant</h3>
-            <img src="img/ai_recruiter_asisstant_image.png" alt="AI Recruiter Assistant">
-            <div class="layer">
-                <h3>AI Recruiter Assistant</h3>
-                <p>
-                    An AI-powered voice and chat assistant designed to help recruiters instantly learn about Ajmal’s
-                    skills, experience, and projects. The system uses Retrieval-Augmented Generation (RAG), vector
-                    search with FAISS, and LLM-based responses to answer questions from a knowledge base containing
-                    resume data, project descriptions, and professional links.
-                    <br><br>
-                    The assistant supports real-time voice conversation, intelligent context retrieval, and a modern
-                    chatbot interface embedded directly into the portfolio website, enabling recruiters to interact
-                    naturally instead of reading static resumes.
-                </p>
-                <a href="https://your-portfolio-link-or-demo">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-            </div>
-        </div>
-
-
-        </div>
-        <a href="#" class="btn">See More</a>
-    </div>
-</div>
-<!---End of profitlio-->
-<!--Begining of Services------->
-<div id="services">
-    <div class="container">
-        <h1 class="subt-title">My Services</h1>
-        <div class="services-list">
-            
-            <div>
-                <i class="fa-solid fa-laptop-code"></i>
-                <h2>Full-Stack Development</h2>
-                <p>
-                    End-to-end development of web and mobile applications using modern frameworks and technologies 
-                    like Node.js, React, React Native, and Swift — from concept to deployment.
-                </p>
-                <a href="#">Learn More</a>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-code"></i>
-                <h2>Web & UI/UX Design</h2>
-                <p>
-                    Design and build responsive, user-friendly websites following 
-                    human-centered design principles, ensuring accessibility and intuitive navigation.
-                </p>
-                <a href="#">Learn More</a>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-database"></i>
-                <h2>Database Design & Administration</h2>
-                <p>
-                    Design, manage, and optimize databases using MongoDB and MySQL, 
-                    ensuring security, scalability, and efficient data retrieval.
-                </p>
-                <a href="#">Learn More</a>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-robot"></i>
-                <h2>AI & Machine Learning Solutions</h2>
-                <p>
-                    Develop intelligent applications using machine learning models, 
-                    data analysis tools, and AI frameworks like scikit-learn, LangChain, and LLaMA.
-                </p>
-                <a href="#">Learn More</a>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-user-check"></i>
-                <h2>Human-Centered Design & Usability Testing</h2>
-                <p>
-                    Conduct user research, interviews, and usability tests to create designs 
-                    that meet real user needs while ensuring accessibility and inclusivity.
-                </p>
-                <a href="#">Learn More</a>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-sitemap"></i>
-                <h2>Software Architecture & Cloud Solutions</h2>
-                <p>
-                    Architect scalable, secure, and high-performance systems, 
-                    leveraging cloud platforms like Microsoft Azure for deployment and integration.
-                </p>
-                <a href="#">Learn More</a>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-book"></i>
-                <h2>Technical Documentation & Training</h2>
-                <p>
-                    Produce clear technical documentation and deliver training sessions 
-                    for teams and end-users, ensuring smooth adoption of tools and systems.
-                </p>
-                <a href="#">Learn More</a>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!--End of Services-->
-<!--Begining of Contact-->
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="subt-title">Contact Me</h1>
-                <p><i class="fa-solid fa-paper-plane"></i> qasim.aimal@gmail.com</p>
-                <p><i class="fa-solid fa-mobile-screen-button"></i> 704-713-8325</p>
-                <div class="social-icons">
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/ajmal-amir-0549159a/"><i class="fa-brands fa-linkedin"></i></i></a>
-                    <a href="https://github.com/ajmal-amir"><i class="fa-brands fa-github"></i></i></a>
-                    <a href="https://www.instagram.com/qasim_aimal/"><i class="fa-brands fa-instagram"></i></i></a>
-                </div>
-                <a href="img/Ajmal_Amir_Resume.docx" download class="btn btn2">Download Resume</a>
-            </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="name" id="name" placeholder="your Name" required>
-                    <input type="email" name="email" id="email" placeholder="Your Email" required>
-                    <textarea name="message" id="message" cols="22" rows="5"></textarea>
-                  
-                    <!-- Honeypot (bots fill this; humans never see it) -->
-                    <input type="text"
-                           name="company"
-                           id="company"
-                           autocomplete="off"
-                           tabindex="-1"
-                           aria-hidden="true"
-                           style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
-                  
-                    <!-- Hidden timestamp to block instant bot submits -->
-                    <input type="hidden" name="form_ts" id="form_ts">
-                  
-                    <button type="submit" class="btn btn2">Submit</button>
-                  </form>
-                  
-                <span id="msg"></span>
-
-            </div>
-        </div>
-    </div>
-    <div class="visit-counter">
-  Visitors: <span id="visitCount">—</span>
-  <img id="visitBadge" alt="Visitors"
-       style="display:none; vertical-align:middle; margin-left:6px;"
-       src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fajmal-amir.github.io%2FPortfolio%2F&count_bg=%2379C83D&title_bg=%23555555&title=Visitors&edge_flat=false">
-</div>
-
-    <div class="copyright">
-        <p>Designed <i class="fa-solid fa-hand-holding-heart"></i><a href="https://github.com/ajmal-amir"> by Ajmal Amir </a> &copy; 2025</p>
-        <div class="visit-counter">Visitors: <span id="visitCount">—</span></div>
-
-    </div>
-</div>
-
-<!-- Private Repo Modal -->
-<div id="privateRepoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
-    <div class="modal__backdrop" data-close></div>
-    <div class="modal__card" role="document">
-      <button class="modal__close" type="button" aria-label="Close" data-close>&times;</button>
-      <h3 id="modalTitle">Access by Request</h3>
-      <p>
-        <strong><span id="modalProject">This repository</span></strong> is currently private to protect data privacy and application ownership.
-        If you’d like to review the code for evaluation purposes, please contact me via the form below and I will add you as a collaborator.
-      </p>
-      <p style="margin-top:6px;">
-        When contacting me, please include your GitHub username and the project name.
-      </p>
-      <div class="modal__actions">
-        <a href="#contact" class="btn btn2">Open Contact Form</a>
-        <button type="button" class="btn" data-close>Close</button>
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="eyebrow">Software Engineer <span aria-hidden="true">|</span> AI &amp; Robotics</p>
+      <h1 id="hero-title" class="hero__title">Building Intelligent Solutions for <span class="accent">Real&#8209;World Impact</span></h1>
+      <svg class="hero__swoosh" viewBox="0 0 200 14" aria-hidden="true" focusable="false"><path d="M2 11 C 60 1, 140 1, 198 7" /></svg>
+      <p class="hero__lead">Software engineer and AI practitioner who builds scalable, secure, and user-centered applications that solve real problems in business, education, and community.</p>
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn--primary"><i class="fa-solid fa-rocket" aria-hidden="true"></i> Explore My Work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        <a href="#contact" class="btn btn--ghost"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Get in Touch</a>
       </div>
     </div>
   </div>
-  
-</body>
+
+  <div class="container">
+    <ul class="highlights glass" aria-label="Professional highlights">
+      <li class="highlight">
+        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+        <div><strong>M.S. Computer Science<br>AI &amp; Robotics</strong><span>UNC Charlotte (Dec 2025)</span></div>
+      </li>
+      <li class="highlight">
+        <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+        <div><strong>Engineering Associate<br>Wells Fargo</strong><span>Since Jul 2026</span></div>
+      </li>
+      <li class="highlight">
+        <i class="fa-solid fa-code" aria-hidden="true"></i>
+        <div><strong>4+ Years</strong><span class="highlight__sub">Development Experience</span><span>Full-Stack, AI/ML, Cloud</span></div>
+      </li>
+      <li class="highlight">
+        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+        <div><strong><span data-project-count>9</span> Projects</strong><span class="highlight__sub">Built &amp; Shipped</span><span>Web, Mobile, AI, Automation</span></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about" id="about" aria-labelledby="about-title">
+  <div class="container about__grid">
+    <!-- Shows Ajmal at work first; once scrolled past, swaps to the Charlotte skyline for the rest of the visit -->
+    <figure class="about__media reveal" id="aboutMedia">
+      <picture class="about__img about__img--city" aria-hidden="true">
+        <source srcset="img/web/city.webp" type="image/webp">
+        <img src="img/cityimage.PNG" alt="Charlotte, North Carolina skyline at sunset" width="1672" height="941" loading="lazy" decoding="async">
+      </picture>
+      <picture class="about__img about__img--working">
+        <source srcset="img/web/ajmal-working.webp" type="image/webp">
+        <img src="img/ajmal%20while%20working.png" alt="Ajmal Amir working at his desk in front of multiple monitors" width="1672" height="941" loading="lazy" decoding="async">
+      </picture>
+    </figure>
+
+    <div class="about__body reveal">
+      <p class="eyebrow">About Me</p>
+      <h2 id="about-title" class="section-title section-title--lg">Software Engineer with a Passion for <span class="accent">AI &amp; Automation</span></h2>
+      <p>I design and build intelligent, scalable, and human-centered software, combining strong engineering practices with AI, data, and cloud technologies. I'm a full-stack engineer with an M.S. in Computer Science (AI &amp; Robotics), experienced in Python and Node.js services, RESTful APIs, React/React Native, SQL-backed systems, and AI/RAG workflows.</p>
+      <p>I've worked across enterprise, startup, nonprofit, and academic settings, from modernization work at Wells Fargo to leading SwiftSift's engineering handoff and building a pro bono platform for my community.</p>
+      <ul class="checklist">
+        <li>M.S. in Computer Science (AI &amp; Robotics) — UNC Charlotte</li>
+        <li>B.S. in Computer Science (Software Engineering) — UNC Charlotte</li>
+        <li>Engineering Associate — Wells Fargo</li>
+        <li>Chief Software Engineer / Consultant — SwiftSift, Inc.</li>
+      </ul>
+    </div>
+
+    <aside class="glance reveal" aria-labelledby="glance-title">
+      <h3 id="glance-title" class="glance__title">At a Glance</h3>
+      <ul class="glance__grid">
+        <li class="glance-card"><i class="fa-solid fa-rocket" aria-hidden="true"></i><strong>4+</strong><span>Years Experience</span></li>
+        <li class="glance-card"><i class="fa-solid fa-code" aria-hidden="true"></i><strong data-project-count>9</strong><span>Projects</span></li>
+        <li class="glance-card glance-card--violet"><i class="fa-solid fa-users" aria-hidden="true"></i><span>Collaboration<br>&amp; Leadership</span></li>
+        <li class="glance-card glance-card--violet"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>Secure &amp;<br>Reliable Solutions</span></li>
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Tech row -->
+  <div class="container tech reveal">
+    <h2 class="tech__title">Tech I Work With</h2>
+    <ul class="tech__list">
+      <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">Python</span></li>
+      <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">JavaScript</span></li>
+      <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/typescript/typescript-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">TypeScript</span></li>
+      <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">React &amp; React Native</span></li>
+      <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/angular/angular-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">Angular</span></li>
+      <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/nodejs/nodejs-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">Node.js</span></li>
+      <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/fastapi/fastapi-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">FastAPI</span></li>
+      <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/flutter/flutter-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">Flutter</span></li>
+      <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/postgresql/postgresql-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">PostgreSQL / SQL</span></li>
+      <li><img class="mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mysql/mysql-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">MySQL</span></li>
+      <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mongodb/mongodb-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">MongoDB</span></li>
+      <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/azure/azure-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">Microsoft Azure</span></li>
+      <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/firebase/firebase-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">Firebase</span></li>
+      <li><img class="invert" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/github/github-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">Git &amp; GitHub</span></li>
+      <li><img class="mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/sonarqube/sonarqube-original.svg" alt="" width="30" height="30" loading="lazy"><span class="tech__name">SonarQube Quality Gates</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section projects" id="projects" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="projects-title" class="section-title bar">Featured Projects</h2>
+      <p class="section-head__sub">Real-world applications solving real problems.</p>
+      <button type="button" class="link-arrow" id="toggle-all-projects" aria-expanded="false" aria-controls="all-projects">
+        <span>View All Projects</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-card reveal" data-project-item>
+        <picture>
+          <source srcset="img/web/swiftsift.webp" type="image/webp">
+          <img src="img/swiftsiftimage.PNG" alt="SwiftSift Group Planner app shown on two phones" width="1536" height="1024" loading="lazy" decoding="async">
+        </picture>
+        <div class="project-card__body">
+          <span class="badge">Mobile · Flutter</span>
+          <h3>SwiftSift Mobile</h3>
+          <p>Group-planning app with shared chat, local discovery, and location-based recommendations.</p>
+        </div>
+        <a class="card-link" href="https://swiftsift.onelink.me/qxPS/3jyfd70j?deep_link_value=qr_connect&amp;deep_link_sub1=LchzBHURCTfQfD0IaM7rBtnMFO72&amp;af_sub1=LchzBHURCTfQfD0IaM7rBtnMFO72&amp;af_channel=qr_code&amp;af_ad=profile_qr" target="_blank" rel="noopener" aria-label="Get the SwiftSift app (opens in a new tab)"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i> Get the app</a>
+        <button type="button" class="round-btn" data-detail="swiftsift" aria-label="View SwiftSift Mobile details"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+      </article>
+
+      <article class="project-card reveal" data-project-item>
+        <picture>
+          <source srcset="img/web/showmearound.webp" type="image/webp">
+          <img src="img/showme-around-image.PNG" alt="Show Me Around travel app on a laptop with mountain scenery" width="1536" height="1024" loading="lazy" decoding="async">
+        </picture>
+        <div class="project-card__body">
+          <span class="badge">AI · React Native</span>
+          <h3>Show Me Around</h3>
+          <p>AI-powered travel and local discovery app using LLMs and Google Maps.</p>
+        </div>
+        <button type="button" class="round-btn" data-detail="showmearound" aria-label="View Show Me Around details"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+      </article>
+
+      <article class="project-card reveal" data-project-item>
+        <picture>
+          <source srcset="img/web/caca.webp" type="image/webp">
+          <img src="img/CACA%20Community%20Website.png" alt="CACA community website displayed on a laptop" width="1536" height="1024" loading="lazy" decoding="async">
+        </picture>
+        <div class="project-card__body">
+          <span class="badge">Web · Node.js</span>
+          <h3>CACA Community Platform</h3>
+          <p>A comprehensive platform for community services, events, membership, and donations.</p>
+        </div>
+        <a class="card-link" href="https://www.cacafghan.org/" target="_blank" rel="noopener" aria-label="Visit the live CACA website (opens in a new tab)"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live site</a>
+        <button type="button" class="round-btn" data-detail="caca" aria-label="View CACA Community Platform details"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+      </article>
+    </div>
+
+    <!-- All projects (revealed by "View All Projects") -->
+    <div class="all-projects" id="all-projects" hidden>
+      <h3 class="all-projects__title">More Projects</h3>
+      <div class="mini-grid">
+        <article class="mini-card" data-project-item>
+          <picture>
+            <source srcset="img/web/tometeam.webp" type="image/webp">
+            <img src="img/old%20images/tometeam.png" alt="TOM Team Scheduling Board interface" width="1024" height="1536" loading="lazy" decoding="async">
+          </picture>
+          <div class="mini-card__body">
+            <h4>TOM Team Scheduling Board</h4>
+            <p>Scheduling platform for Amazon Transportation Associates and Managers with qualification-based task assignment.</p>
+            <ul class="chips"><li>Node.js</li><li>Express</li><li>MongoDB</li><li>EJS</li></ul>
+            <div class="mini-card__actions">
+              <button type="button" class="text-btn" data-detail="tom">Details</button>
+              <a href="https://github.com/ajmal-amir/TOMTEAMSB.git" class="text-btn private-repo" data-project="TOM Team Scheduling Board" aria-haspopup="dialog" aria-controls="privateRepoModal">Code <i class="fa-solid fa-lock" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="mini-card" data-project-item>
+          <picture>
+            <source srcset="img/web/marketiq.webp" type="image/webp">
+            <img src="img/old%20images/markeriq.png" alt="StockMarketIQ stock prediction dashboard" width="1024" height="1536" loading="lazy" decoding="async">
+          </picture>
+          <div class="mini-card__body">
+            <h4>StockMarketIQ</h4>
+            <p>AI-powered stock prediction and analysis with predictive modeling and interactive visualizations.</p>
+            <ul class="chips"><li>Python</li><li>Streamlit</li><li>scikit-learn</li></ul>
+            <div class="mini-card__actions">
+              <button type="button" class="text-btn" data-detail="marketiq">Details</button>
+              <a href="https://github.com/ajmal-amir/MarketIQ" class="text-btn" target="_blank" rel="noopener">GitHub <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="mini-card" data-project-item>
+          <picture>
+            <source srcset="img/web/linkuplegends.webp" type="image/webp">
+            <img src="img/old%20images/linkeduplgends1.png" alt="LinkUpLegends event platform" width="1024" height="1536" loading="lazy" decoding="async">
+          </picture>
+          <div class="mini-card__body">
+            <h4>LinkUpLegends</h4>
+            <p>Event management web app to create, discover, and manage events with RSVP tracking and Google Maps.</p>
+            <ul class="chips"><li>Node.js</li><li>MongoDB</li><li>HTML/CSS</li><li>Google Maps</li></ul>
+            <div class="mini-card__actions">
+              <button type="button" class="text-btn" data-detail="linkuplegends">Details</button>
+              <a href="https://github.com/ajmal-amir/LinkUpLegends_Website.git" class="text-btn" target="_blank" rel="noopener">GitHub <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="mini-card" data-project-item>
+          <picture>
+            <source srcset="img/web/ai-recruiter.webp" type="image/webp">
+            <img src="img/old%20images/ai_recruiter_asisstant_image.png" alt="AI Recruiter Assistant chat interface" width="1024" height="1536" loading="lazy" decoding="async">
+          </picture>
+          <div class="mini-card__body">
+            <h4>AI Recruiter Assistant</h4>
+            <p>Voice and chat assistant that answers recruiter questions about my skills and projects using RAG.</p>
+            <ul class="chips"><li>RAG</li><li>FAISS</li><li>LLM</li><li>Voice</li></ul>
+            <div class="mini-card__actions">
+              <button type="button" class="text-btn" data-detail="airecruiter">Details</button>
+              <button type="button" class="text-btn" data-open-chat>Try it live <i class="fa-solid fa-comments" aria-hidden="true"></i></button>
+              <a href="https://youtu.be/v8two3uTsIo" class="text-btn" target="_blank" rel="noopener">Demo <i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="mini-card mini-card--icon" data-project-item>
+          <div class="mini-card__icon" aria-hidden="true"><i class="fa-solid fa-bug"></i></div>
+          <div class="mini-card__body">
+            <h4>Bug Severity Classification</h4>
+            <p>NLP pipeline that categorizes software issues by severity with preprocessing, fine-tuning, and evaluation.</p>
+            <ul class="chips"><li>Python</li><li>DistilBERT</li><li>Hugging Face</li><li>scikit-learn</li></ul>
+            <div class="mini-card__actions">
+              <button type="button" class="text-btn" data-detail="bugseverity">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mini-card mini-card--icon" data-project-item>
+          <div class="mini-card__icon" aria-hidden="true"><i class="fa-solid fa-tooth"></i></div>
+          <div class="mini-card__body">
+            <h4>Dental Clinic Management System</h4>
+            <p>Normalized relational schemas, indexed queries, and automated workflows with stored procedures and triggers.</p>
+            <ul class="chips"><li>SQL</li><li>MySQL</li><li>Stored procedures</li><li>Triggers</li></ul>
+            <div class="mini-card__actions">
+              <button type="button" class="text-btn" data-detail="dental">Details</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES + EXPERIENCE ============ -->
+<section class="section split" aria-label="Services and experience">
+  <div class="container split__grid">
+    <div class="services reveal" id="services">
+      <h2 class="section-title bar">My Services</h2>
+      <ul class="service-grid">
+        <li><button type="button" class="service-card" data-detail="svc-software"><i class="fa-solid fa-code" aria-hidden="true"></i><span>Software<br>Development</span></button></li>
+        <li><button type="button" class="service-card" data-detail="svc-ai"><i class="fa-solid fa-brain" aria-hidden="true"></i><span>AI &amp; Machine<br>Learning</span></button></li>
+        <li><button type="button" class="service-card service-card--blue" data-detail="svc-cloud"><i class="fa-solid fa-cloud" aria-hidden="true"></i><span>Cloud &amp;<br>DevOps</span></button></li>
+        <li><button type="button" class="service-card service-card--violet" data-detail="svc-consulting"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span>Technical<br>Consulting</span></button></li>
+      </ul>
+    </div>
+
+    <div class="experience reveal" id="experience">
+      <div class="section-head section-head--tight">
+        <h2 class="section-title bar">Experience</h2>
+        <button type="button" class="link-arrow" data-detail="experience-full"><span>View Full Experience</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="logo-tile"><picture><source srcset="img/wellsfargo_logo.avif" type="image/avif"><img src="img/web/wellsfargo.png" alt="Wells Fargo" width="40" height="40" loading="lazy"></picture></span>
+          <div><h3>Engineering Associate</h3><p>Wells Fargo <span aria-hidden="true">·</span> Jul 2026 – Present</p></div>
+        </li>
+        <li class="timeline__item">
+          <span class="logo-tile"><img src="img/web/swiftsift-logo.png" alt="SwiftSift" width="40" height="40" loading="lazy"></span>
+          <div><h3>Chief Software Engineer / Consultant</h3><p>SwiftSift, Inc. <span aria-hidden="true">·</span> Jan 2026 – Present</p></div>
+        </li>
+        <li class="timeline__item">
+          <span class="logo-tile logo-tile--wide"><img src="img/web/uncc.png" alt="UNC Charlotte" width="78" height="40" loading="lazy"></span>
+          <div><h3>Graduate Teaching &amp; Research Assistant</h3><p>UNC Charlotte <span aria-hidden="true">·</span> Feb 2025 – Dec 2025</p></div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section skills" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="skills-title" class="section-title bar">Skills</h2>
+      <p class="section-head__sub">Verified from production work, coursework, and shipped projects.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal"><h3><i class="fa-solid fa-terminal" aria-hidden="true"></i> Programming Languages</h3>
+        <ul class="chips"><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>SQL</li><li>Swift</li><li>Java</li><li>C</li><li>Assembly</li></ul></div>
+      <div class="skill-card reveal"><h3><i class="fa-brands fa-python" aria-hidden="true"></i> Python</h3>
+        <ul class="chips"><li>FastAPI</li><li>Pydantic</li><li>Ruff</li><li>SQLAlchemy</li><li>pandas</li><li>Python-based ETL</li></ul></div>
+      <div class="skill-card reveal"><h3><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Frontend &amp; Mobile</h3>
+        <ul class="chips"><li>React.js</li><li>Angular</li><li>React Native</li><li>Expo</li><li>Flutter</li><li>HTML5</li><li>CSS3</li><li>Responsive design</li><li>UI/UX integration</li></ul></div>
+      <div class="skill-card reveal"><h3><i class="fa-solid fa-server" aria-hidden="true"></i> Backend Development</h3>
+        <ul class="chips"><li>Node.js</li><li>Express</li><li>FastAPI</li><li>RESTful APIs</li><li>EJS</li><li>Secure authentication</li></ul></div>
+      <div class="skill-card reveal"><h3><i class="fa-solid fa-brain" aria-hidden="true"></i> AI &amp; Machine Learning</h3>
+        <ul class="chips"><li>RAG</li><li>LangChain</li><li>LangGraph</li><li>Groq / LLaMA</li><li>Hugging Face</li><li>DistilBERT</li><li>scikit-learn</li><li>pandas</li><li>Matplotlib</li></ul></div>
+      <div class="skill-card reveal"><h3><i class="fa-solid fa-database" aria-hidden="true"></i> Databases</h3>
+        <ul class="chips"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB Atlas</li><li>SQLAlchemy</li><li>Relational modeling</li><li>Indexing</li></ul></div>
+      <div class="skill-card reveal"><h3><i class="fa-solid fa-cloud" aria-hidden="true"></i> Cloud &amp; DevOps</h3>
+        <ul class="chips"><li>Microsoft Azure</li><li>Firebase</li><li>Railway</li><li>Git</li><li>GitHub</li><li>CI/CD concepts</li><li>Deployment workflows</li></ul></div>
+      <div class="skill-card skill-card--wide reveal"><h3><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Tools &amp; Engineering Practices</h3>
+        <ul class="chips"><li>Agile / Scrum</li><li>Code reviews</li><li>SonarQube Quality Gates</li><li>Secure coding</li><li>Technical documentation</li><li>User research</li><li>Usability testing</li><li>Accessibility design</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta reveal">
+      <picture>
+        <source srcset="img/web/footer-mountains.webp" type="image/webp">
+        <img class="cta__bg" src="img/Image_above_footer.PNG" alt="" width="2170" height="725" loading="lazy" decoding="async">
+      </picture>
+      <div class="cta__content">
+        <h2 id="cta-title">Let's Build<br>Something <span class="accent">Meaningful</span></h2>
+        <p>I'm always open to new opportunities, collaborations, and impactful projects.</p>
+      </div>
+      <div class="cta__actions">
+        <a href="#contact-form" class="btn btn--primary" data-focus="name"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Get in Touch</a>
+        <a href="img/Ajmal_Amir%20Resume.pdf" download="Ajmal_Amir_Resume.pdf" class="btn btn--ghost"><i class="fa-solid fa-download" aria-hidden="true"></i> Download Résumé</a>
+      </div>
+    </div>
+
+    <div class="contact-panel" id="contact-form">
+      <div class="contact-info reveal">
+        <h2 class="section-title bar">Contact Me</h2>
+        <p class="contact-info__lead">Recruiters and collaborators: send a message here, or reach me directly.</p>
+        <ul class="contact-list">
+          <li><i class="fa-solid fa-paper-plane" aria-hidden="true"></i><a href="mailto:qasim.aimal@gmail.com">qasim.aimal@gmail.com</a></li>
+          <li><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i><a href="tel:+17047138325">704-713-8325</a></li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Charlotte, NC, USA</span></li>
+        </ul>
+        <div class="social">
+          <a href="https://www.linkedin.com/in/ajmal-amir-0549159a/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://github.com/ajmal-amir" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/qasim_aimal/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="mailto:qasim.aimal@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-form glass reveal">
+        <form name="submit-to-google-sheet">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Your Name" autocomplete="name" maxlength="120" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Your Email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="5" placeholder="How can I help?" maxlength="3000" required></textarea>
+          </div>
+
+          <!-- Honeypot (bots fill this; humans never see it) -->
+          <input type="text" name="company" id="company" autocomplete="off" tabindex="-1" aria-hidden="true"
+                 style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
+
+          <!-- Hidden timestamp to block instant bot submits -->
+          <input type="hidden" name="form_ts" id="form_ts">
+
+          <button type="submit" class="btn btn--primary btn--block"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message</button>
+          <p id="msg" class="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <a class="brand brand--footer" href="#home" aria-label="Ajmal Amir — back to top">
+      <picture>
+        <source srcset="img/web/logo-mark.webp" type="image/webp">
+        <img src="img/web/logo-mark.png" alt="" width="64" height="42" class="brand__logo">
+      </picture>
+      <span><span class="brand__name">Ajmal Amir</span><span class="brand__tag">Software Engineer <span aria-hidden="true">|</span> AI &amp; Robotics <span aria-hidden="true">|</span> Full-Stack Developer</span></span>
+    </a>
+    <div class="social social--footer">
+      <a href="https://www.linkedin.com/in/ajmal-amir-0549159a/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+      <a href="https://github.com/ajmal-amir" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/qasim_aimal/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+      <a href="mailto:qasim.aimal@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
+    </div>
+    <p class="footer__loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Charlotte, NC, USA</p>
+  </div>
+  <div class="container footer__bottom">
+    <p>Designed &amp; built by <a href="https://github.com/ajmal-amir" target="_blank" rel="noopener">Ajmal Amir</a> &copy; <span id="year">2026</span></p>
+    <div class="visit-counter" hidden>
+      <i class="fa-regular fa-eye" aria-hidden="true"></i> Visitors: <span id="visitCount">—</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ DETAIL DIALOG (projects / services / experience) ============ -->
+<dialog class="detail-dialog" id="detailDialog" aria-labelledby="detailTitle">
+  <button type="button" class="detail-dialog__close" data-dialog-close aria-label="Close"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+  <div class="detail-dialog__body" id="detailBody"></div>
+</dialog>
+
+<!-- Detail content templates -->
+<template id="detail-swiftsift">
+  <p class="eyebrow">Featured Project · Mobile</p>
+  <h2 id="detailTitle">SwiftSift Mobile</h2>
+  <p>SwiftSift is a group-planning mobile app that helps friends decide what to do together, combining group chat, local discovery, and location-based recommendations in one place.</p>
+  <h3>My role — Chief Software Engineer / Consultant (Jan 2026 – Present)</h3>
+  <ul>
+    <li>Led the transfer of application source code, repositories, technical documentation, and engineering ownership from an external vendor to an internal team.</li>
+    <li>Reviewed and restructured application code to improve maintainability, security, and scalability; identified and addressed pre-launch vulnerabilities.</li>
+    <li>Partner with the founders on system architecture, UI/UX priorities, integrations, and delivery planning.</li>
+  </ul>
+  <ul class="chips"><li>Flutter</li><li>Firebase</li><li>Mobile</li><li>Security review</li></ul>
+  <div class="detail-actions">
+    <a href="https://swiftsift.onelink.me/qxPS/3jyfd70j?deep_link_value=qr_connect&amp;deep_link_sub1=LchzBHURCTfQfD0IaM7rBtnMFO72&amp;af_sub1=LchzBHURCTfQfD0IaM7rBtnMFO72&amp;af_channel=qr_code&amp;af_ad=profile_qr" class="btn btn--primary btn--sm" target="_blank" rel="noopener"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i> Get the app &amp; connect with me</a>
+  </div>
+  <p class="detail-note"><i class="fa-solid fa-lock" aria-hidden="true"></i> Proprietary product of SwiftSift, Inc. — source code is not public.</p>
+</template>
+
+<template id="detail-showmearound">
+  <p class="eyebrow">Featured Project · AI</p>
+  <h2 id="detailTitle">Show Me Around — AI Travel Assistant</h2>
+  <p>An AI-powered travel and local discovery app that recommends activities and attractions through natural-language conversation.</p>
+  <ul>
+    <li>Built a Python/FastAPI REST backend with activity discovery, geolocation, and persistent user preferences.</li>
+    <li>Integrated LLM-driven recommendations and retrieval (RAG) workflows using Groq, LangGraph multi-agent coordination, and Google Maps APIs for real-time attraction details.</li>
+    <li>Delivered a React Native / Expo client with reusable UI components and authentication.</li>
+  </ul>
+  <ul class="chips"><li>React Native</li><li>Expo</li><li>Python</li><li>FastAPI</li><li>LangGraph</li><li>RAG</li><li>Groq</li><li>Google Maps APIs</li></ul>
+  <div class="detail-actions">
+    <a href="https://github.com/ajmal-amir/show_me_arround.git" class="btn btn--outline btn--sm private-repo" data-project="Show Me Around" aria-haspopup="dialog" aria-controls="privateRepoModal"><i class="fa-solid fa-lock" aria-hidden="true"></i> Request code access</a>
+  </div>
+</template>
+
+<template id="detail-caca">
+  <p class="eyebrow">Featured Project · Web</p>
+  <h2 id="detailTitle">CACA Community Platform</h2>
+  <p>Built pro bono for the Charlotte Afghans Community Association: a full-stack, multilingual community platform for services, announcements, events, membership, volunteer registration, fundraising, and administration.</p>
+  <ul>
+    <li>Built and deployed with Node.js, Express, MongoDB Atlas, and EJS, hosted on Railway, with responsive interfaces.</li>
+    <li>Implemented role-based access, email verification, admin CRUD APIs and workflows, event and document management, payment integration, and media storage.</li>
+    <li>Added security headers, rate limiting, and English / Dari / Pashto right-to-left support for usability and safer operation.</li>
+  </ul>
+  <ul class="chips"><li>Node.js</li><li>Express</li><li>MongoDB Atlas</li><li>EJS</li><li>Railway</li><li>RBAC</li><li>i18n / RTL</li></ul>
+  <div class="detail-actions">
+    <a href="https://www.cacafghan.org/" class="btn btn--primary btn--sm" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Visit cacafghan.org</a>
+  </div>
+  <p class="detail-note"><img src="img/web/caca-logo.png" alt="" width="28" height="26"> Full-Stack Software Engineer (Pro Bono) · Apr 2026 – Present</p>
+</template>
+
+<template id="detail-tom">
+  <p class="eyebrow">Project</p>
+  <h2 id="detailTitle">TOM Team Scheduling Board</h2>
+  <p>A scheduling platform for Amazon Transportation Associates and Managers, built with Node.js, Express, MongoDB, and EJS. Features manual and automated task assignment, blueprint integration, and qualification-based scheduling to streamline operations.</p>
+  <ul><li>Secure login, task assignment, shift-scheduling rules, and API-backed operational workflows for web and mobile.</li></ul>
+  <ul class="chips"><li>Node.js</li><li>Express</li><li>MongoDB</li><li>EJS</li><li>REST APIs</li></ul>
+  <div class="detail-actions">
+    <a href="https://github.com/ajmal-amir/TOMTEAMSB.git" class="btn btn--outline btn--sm private-repo" data-project="TOM Team Scheduling Board" aria-haspopup="dialog" aria-controls="privateRepoModal"><i class="fa-solid fa-lock" aria-hidden="true"></i> Request code access</a>
+  </div>
+</template>
+
+<template id="detail-marketiq">
+  <p class="eyebrow">Project</p>
+  <h2 id="detailTitle">StockMarketIQ</h2>
+  <p>An AI-powered stock prediction and analysis platform developed with Streamlit, Python, and scikit-learn. Provides predictive modeling, market trend analysis, and interactive data visualizations for informed investment decisions.</p>
+  <ul class="chips"><li>Python</li><li>Streamlit</li><li>scikit-learn</li><li>Data visualization</li></ul>
+  <div class="detail-actions">
+    <a href="https://github.com/ajmal-amir/MarketIQ" class="btn btn--outline btn--sm" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> View on GitHub</a>
+  </div>
+</template>
+
+<template id="detail-linkuplegends">
+  <p class="eyebrow">Project</p>
+  <h2 id="detailTitle">LinkUpLegends</h2>
+  <p>An event management web app enabling users to create, discover, and manage events with RSVP tracking and Google Maps integration. Developed using Node.js, HTML/CSS, and MongoDB with a responsive, user-friendly design.</p>
+  <ul class="chips"><li>Node.js</li><li>MongoDB</li><li>HTML/CSS</li><li>Google Maps</li></ul>
+  <div class="detail-actions">
+    <a href="https://github.com/ajmal-amir/LinkUpLegends_Website.git" class="btn btn--outline btn--sm" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> View on GitHub</a>
+  </div>
+</template>
+
+<template id="detail-airecruiter">
+  <p class="eyebrow">Project · Live on this site</p>
+  <h2 id="detailTitle">AI Recruiter Assistant</h2>
+  <p>An AI-powered voice and chat assistant designed to help recruiters instantly learn about my skills, experience, and projects. The system uses Retrieval-Augmented Generation (RAG), vector search with FAISS, and LLM-based responses to answer questions from a knowledge base containing résumé data, project descriptions, and professional links.</p>
+  <p>The assistant supports real-time voice conversation, intelligent context retrieval, and a modern chatbot interface embedded directly into this portfolio, so recruiters can ask questions naturally instead of reading a static résumé.</p>
+  <ul class="chips"><li>RAG</li><li>FAISS</li><li>LLM</li><li>Speech recognition</li><li>Text-to-speech</li><li>Railway</li></ul>
+  <div class="detail-actions">
+    <button type="button" class="btn btn--primary btn--sm" data-open-chat><i class="fa-solid fa-comments" aria-hidden="true"></i> Try it now</button>
+    <a href="https://youtu.be/v8two3uTsIo" class="btn btn--outline btn--sm" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Watch the demo</a>
+  </div>
+</template>
+
+<template id="detail-bugseverity">
+  <p class="eyebrow">Project · NLP</p>
+  <h2 id="detailTitle">Bug Severity Classification</h2>
+  <p>Built an NLP classification pipeline to categorize software issues by severity, covering preprocessing, model fine-tuning, and evaluation.</p>
+  <ul class="chips"><li>Python</li><li>DistilBERT</li><li>Hugging Face</li><li>scikit-learn</li></ul>
+</template>
+
+<template id="detail-dental">
+  <p class="eyebrow">Project · Databases</p>
+  <h2 id="detailTitle">Dental Clinic Management System</h2>
+  <p>Designed normalized relational schemas, optimized queries with indexing, and automated workflows using stored procedures and triggers.</p>
+  <ul class="chips"><li>SQL</li><li>MySQL</li><li>Stored procedures</li><li>Triggers</li><li>Indexing</li></ul>
+</template>
+
+<template id="detail-svc-software">
+  <p class="eyebrow">Service</p>
+  <h2 id="detailTitle">Software Development</h2>
+  <h3>Full-Stack Development</h3>
+  <p>End-to-end development of web and mobile applications using modern frameworks and technologies like Node.js, React, React Native, and Swift — from concept to deployment.</p>
+  <h3>Web &amp; UI/UX Design</h3>
+  <p>Design and build responsive, user-friendly websites following human-centered design principles, ensuring accessibility and intuitive navigation.</p>
+  <h3>Human-Centered Design &amp; Usability Testing</h3>
+  <p>Conduct user research, interviews, and usability tests to create designs that meet real user needs while ensuring accessibility and inclusivity.</p>
+  <div class="detail-actions"><a href="#contact-form" class="btn btn--primary btn--sm" data-dialog-close>Discuss a project</a></div>
+</template>
+
+<template id="detail-svc-ai">
+  <p class="eyebrow">Service</p>
+  <h2 id="detailTitle">AI &amp; Machine Learning</h2>
+  <h3>AI &amp; Machine Learning Solutions</h3>
+  <p>Develop intelligent applications using machine learning models, data analysis tools, and AI frameworks like scikit-learn, LangChain, and LLaMA.</p>
+  <h3>RAG &amp; LLM Assistants</h3>
+  <p>Retrieval-augmented assistants and LLM workflows with LangChain, LangGraph, Groq, and Hugging Face — like the AI Recruiter Assistant running on this site.</p>
+  <div class="detail-actions"><a href="#contact-form" class="btn btn--primary btn--sm" data-dialog-close>Discuss a project</a></div>
+</template>
+
+<template id="detail-svc-cloud">
+  <p class="eyebrow">Service</p>
+  <h2 id="detailTitle">Cloud &amp; DevOps</h2>
+  <h3>Software Architecture &amp; Cloud Solutions</h3>
+  <p>Architect scalable, secure, and high-performance systems, leveraging cloud platforms like Microsoft Azure for deployment and integration.</p>
+  <h3>Database Design &amp; Administration</h3>
+  <p>Design, manage, and optimize databases using MongoDB and MySQL, ensuring security, scalability, and efficient data retrieval.</p>
+  <h3>Deployment</h3>
+  <p>Git/GitHub workflows, CI/CD concepts, and hosting on Azure, Firebase, and Railway.</p>
+  <div class="detail-actions"><a href="#contact-form" class="btn btn--primary btn--sm" data-dialog-close>Discuss a project</a></div>
+</template>
+
+<template id="detail-svc-consulting">
+  <p class="eyebrow">Service</p>
+  <h2 id="detailTitle">Technical Consulting</h2>
+  <h3>Code &amp; Architecture Review</h3>
+  <p>Codebase reviews for maintainability, security, and scalability, including vendor-to-in-house handoffs of repositories, documentation, and engineering ownership.</p>
+  <h3>Technical Documentation &amp; Training</h3>
+  <p>Produce clear technical documentation and deliver training sessions for teams and end-users, ensuring smooth adoption of tools and systems.</p>
+  <div class="detail-actions"><a href="#contact-form" class="btn btn--primary btn--sm" data-dialog-close>Discuss a project</a></div>
+</template>
+
+<template id="detail-experience-full">
+  <p class="eyebrow">Professional Experience</p>
+  <h2 id="detailTitle">Full Experience</h2>
+  <ol class="xp-list">
+    <li>
+      <div class="xp-head"><span class="logo-tile"><picture><source srcset="img/wellsfargo_logo.avif" type="image/avif"><img src="img/web/wellsfargo.png" alt="Wells Fargo" width="40" height="40"></picture></span>
+        <div><h3>Engineering Associate</h3><p>Wells Fargo — Charlotte, NC · Jul 2026 – Present</p></div></div>
+      <ul>
+        <li>Support application modernization and CPG Transformation workstreams in a regulated enterprise environment, emphasizing secure development, documentation, and integration readiness.</li>
+        <li>Develop understanding of target-state architecture, relational data modeling, Python-based ETL patterns, SQL validation, data reconciliation, and audit reporting.</li>
+        <li>Collaborate with engineering stakeholders on application dependencies, developer tooling, project onboarding, and requirements clarification.</li>
+      </ul>
+    </li>
+    <li>
+      <div class="xp-head"><span class="logo-tile"><img src="img/web/swiftsift-logo.png" alt="SwiftSift" width="40" height="40"></span>
+        <div><h3>Chief Software Engineer / Consultant</h3><p>SwiftSift, Inc. · Jan 2026 – Present</p></div></div>
+      <ul>
+        <li>Led transfer of application source code, repositories, technical documentation, and engineering ownership from an external vendor to an internal team.</li>
+        <li>Reviewed and restructured application code to improve maintainability, security, and scalability; identified and addressed pre-launch vulnerabilities.</li>
+        <li>Partner with founders on system architecture, UI/UX priorities, integrations, and delivery planning.</li>
+      </ul>
+    </li>
+    <li>
+      <div class="xp-head"><span class="logo-tile"><img src="img/web/caca-logo.png" alt="Charlotte Afghans Community Association" width="40" height="37"></span>
+        <div><h3>Full-Stack Software Engineer (Pro Bono)</h3><p>Charlotte Afghans Community Association · Apr 2026 – Present</p></div></div>
+      <ul>
+        <li>Built and deployed a full-stack community web platform using Node.js, Express, MongoDB Atlas, and EJS, with responsive multilingual interfaces and Railway hosting.</li>
+        <li>Implemented role-based access, email verification, admin CRUD APIs/workflows, event and document management, payment integration, and media storage.</li>
+        <li>Added security headers, rate limiting, and English/Dari/Pashto right-to-left support for usability and safer operation.</li>
+      </ul>
+    </li>
+    <li>
+      <div class="xp-head"><span class="logo-tile logo-tile--wide"><img src="img/web/uncc.png" alt="UNC Charlotte" width="78" height="40"></span>
+        <div><h3>Graduate Teaching &amp; Research Assistant</h3><p>UNC Charlotte · Feb 2025 – Dec 2025</p></div></div>
+      <ul><li>Supported software engineering and web development coursework through code reviews, debugging guidance, technical evaluations, and documentation.</li></ul>
+    </li>
+    <li>
+      <div class="xp-head"><span class="logo-tile logo-tile--text" aria-hidden="true">ASTRO<small>AI TRADING</small></span>
+        <div><h3>Software Engineer</h3><p>Astro AI Trading — Remote · Mar 2024 – Jul 2024</p></div></div>
+      <ul>
+        <li>Developed full-stack functionality with responsive user interfaces and Python/Node.js backend services integrating AI-powered trading logic.</li>
+        <li>Worked across testing, peer reviews, sprint planning, and iterative delivery with cross-functional collaborators.</li>
+      </ul>
+    </li>
+    <li>
+      <div class="xp-head"><span class="logo-tile logo-tile--wide"><img src="img/web/amazon.png" alt="Amazon" width="78" height="24"></span>
+        <div><h3>Transportation Associate</h3><p>Amazon.com, Inc. — Charlotte, NC · From 2023</p></div></div>
+      <ul><li>Worked in transportation operations; this hands-on experience inspired the TOM Team Scheduling Board for Transportation Associates and Managers.</li></ul>
+    </li>
+    <li>
+      <div class="xp-head"><span class="logo-tile logo-tile--icon" aria-hidden="true"><i class="fa-solid fa-network-wired"></i></span>
+        <div><h3>IT Specialist &amp; Administrative Assistant</h3><p>GARDAWorld Federal Services · 2014 – 2018</p></div></div>
+    </li>
+    <li>
+      <div class="xp-head"><span class="logo-tile logo-tile--icon" aria-hidden="true"><i class="fa-solid fa-chalkboard-user"></i></span>
+        <div><h3>IT Translator / IT Trainer</h3><p>DRS Technologies &amp; Eagle System · 2013 – 2014</p></div></div>
+    </li>
+  </ol>
+  <h3 class="xp-edu-title">Education</h3>
+  <ul class="xp-edu">
+    <li><strong>M.S. Computer Science, AI &amp; Robotics</strong> — University of North Carolina at Charlotte · Dec 2025</li>
+    <li><strong>B.S. Computer Science, Software Engineering</strong> — University of North Carolina at Charlotte · Dec 2024 (Dean’s List)</li>
+  </ul>
+  <div class="detail-actions">
+    <a href="img/Ajmal_Amir%20Resume.pdf" download="Ajmal_Amir_Resume.pdf" class="btn btn--outline btn--sm"><i class="fa-solid fa-download" aria-hidden="true"></i> Download Résumé</a>
+  </div>
+</template>
+
+<!-- Private Repo Modal (existing feature) -->
+<div id="privateRepoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__card" role="document">
+    <button class="modal__close" type="button" aria-label="Close" data-close>&times;</button>
+    <h3 id="modalTitle">Access by Request</h3>
+    <p>
+      <strong><span id="modalProject">This repository</span></strong> is currently private to protect data privacy and application ownership.
+      If you’d like to review the code for evaluation purposes, please contact me via the form below and I will add you as a collaborator.
+    </p>
+    <p>When contacting me, please include your GitHub username and the project name.</p>
+    <div class="modal__actions">
+      <a href="#contact-form" class="btn btn--primary btn--sm" data-close>Open Contact Form</a>
+      <button type="button" class="btn btn--ghost btn--sm" data-close>Close</button>
+    </div>
+  </div>
+</div>
+
 <script src="widget.js"></script>
 <script src="js/script.js"></script>
-
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-  const openLink = document.getElementById("open-ajmal-ai");
-  if (!openLink) return;
-
-  openLink.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const bot = document.getElementById("ajmal-bot");
-    if (bot) bot.classList.remove("minimized");
-
-    // If you use the close button "open-mode", also reset it to normal close state
-    const closeBtn = document.getElementById("ajmal-close");
-    if (closeBtn) {
-      closeBtn.textContent = "✕";
-      closeBtn.title = "Close";
-      closeBtn.classList.remove("open-mode");
-    }
-
-    // Optional: scroll chat to bottom so it looks active
-    const body = document.getElementById("ajmal-body");
-    if (body) body.scrollTop = body.scrollHeight;
-  });
-});
-  </script>
-
-
+</body>
 </html>

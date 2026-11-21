@@ -1,386 +1,193 @@
+/* =========================================================
+   Ajmal AI Recruiter Assistant — widget styles
+   Matches the portfolio palette (navy / cyan / blue / violet)
+   ========================================================= */
+
 #ajmal-bot {
+  --wb-bg: #061428;
+  --wb-surface: #0a1f3d;
+  --wb-border: rgba(0, 229, 255, 0.35);
+  --wb-cyan: #00e5ff;
+  --wb-muted: #a9b8d0;
+
   position: fixed;
   right: 20px;
   bottom: 20px;
-  width: 360px;
-  max-width: calc(100vw - 40px);
-  background: #0b0b0b;
+  z-index: 900;
+  width: 380px;
+  max-width: calc(100vw - 32px);
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(10, 31, 61, 0.97), rgba(4, 15, 32, 0.98));
   color: #fff;
-  border: 1px solid #2a2a2a;
-  border-radius: 14px;
+  border: 1px solid var(--wb-border);
+  border-radius: 18px;
   overflow: hidden;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-
-
-  
-}
-
-/* Strong visible border on black background */
-#ajmal-bot {
-  border: 1px solid rgba(235, 9, 9, 0.22);           /* brighter */
-  outline: 1px solid rgba(186, 90, 175, 0.25);            /* subtle glow tint */
-  outline-offset: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   box-shadow:
-    0 10px 30px rgba(213, 3, 3, 0.35),
-    0 0 0 1px rgba(140, 12, 12, 0.06),                    /* crisp edge */
-    0 0 18px rgba(182, 45, 104, 0.12);                       /* soft glow */
+    0 24px 60px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(0, 229, 255, 0.12),
+    0 0 36px rgba(0, 140, 255, 0.22);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
 }
-
 
 #ajmal-bot header {
-  padding: 12px 14px;
-  background: #111;
-  border-bottom: 1px solid #2a2a2a;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
+  padding: 12px 12px 12px 14px;
+  background: linear-gradient(90deg, rgba(0, 140, 255, 0.18), rgba(155, 77, 255, 0.14));
+  border-bottom: 1px solid rgba(110, 170, 255, 0.18);
 }
 
 #ajmal-bot header .title {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-#ajmal-bot .body {
-  height: 320px;
-  overflow-y: auto;
-  padding: 12px;
-}
-
-.msg {
-  margin: 10px 0;
-  line-height: 1.35;
-  font-size: 13px;
-  white-space: pre-wrap;
-}
-
-.msg.user { color: #ddd; }
-.msg.bot  { color: #fff; }
-
-#ajmal-bot .footer {
-  padding: 10px;
-  border-top: 1px solid #2a2a2a;
   display: flex;
-  gap: 8px;
-}
-
-#ajmal-input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #333;
-  background: #0f0f0f;
-  color: #fff;
-}
-
-#ajmal-send, #ajmal-mic, #ajmal-mode {
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #333;
-  background: #151515;
-  color: #fff;
-  cursor: pointer;
-}
-
-#ajmal-mode {
-  width: 90px;
-}
-
-/* Make line breaks show properly inside chat bubbles */
-.msg {
-  white-space: pre-wrap;       /* preserves \n */
-  word-wrap: break-word;
-  margin: 10px 0;
-  line-height: 1.35;
-  font-size: 13px;
-
-  /* bubble look */
-  padding: 10px 12px;
-  border-radius: 12px;
-  max-width: 85%;
-  display: inline-block;
-}
-
-/* Align user messages to the RIGHT */
-.msg.user {
-  background: #1f2937;         /* dark gray */
-  color: #fff;
-  margin-left: auto;           /* pushes bubble to right */
-  text-align: left;
-  border: 1px solid #374151;
-}
-
-/* Align bot messages to the LEFT */
-.msg.bot {
-  background: #0f172a;         /* deep navy */
-  color: #fff;
-  margin-right: auto;          /* stays on left */
-  border: 1px solid #1f2a44;
-}
-
-/* A row wrapper that controls alignment (optional but helps) */
-.msg-row {
-  display: flex;
-}
-
-/* Right-align user row, left-align bot row */
-.msg-row.user { justify-content: flex-end; }
-.msg-row.bot  { justify-content: flex-start; }
-
-/* Typing indicator bubble */
-.msg.typing {
-  background: #111;
-  border: 1px solid #2a2a2a;
-  color: #bbb;
-}
-
-/* Three dots typing animation */
-.typing-dots {
-  display: inline-flex;
-  gap: 4px;
   align-items: center;
-}
-
-.typing-dots span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #bbb;
-  opacity: 0.35;
-  animation: vbDots 1.1s infinite;
-}
-
-.typing-dots span:nth-child(2) { animation-delay: 0.15s; }
-.typing-dots span:nth-child(3) { animation-delay: 0.30s; }
-
-@keyframes vbDots {
-  0%, 100% { transform: translateY(0); opacity: 0.35; }
-  50%      { transform: translateY(-3px); opacity: 1; }
-}
-
-
-/* ---------- Siri-like Speaking Overlay ---------- */
-#siri-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  display: none;                 /* hidden by default */
-  align-items: center;
-  justify-content: center;
-  z-index: 999999;               /* above everything */
-}
-
-#siri-overlay.active {
-  display: flex;
-}
-
-#siri-card {
-  width: min(520px, calc(100vw - 40px));
-  padding: 26px 22px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(10, 10, 10, 0.65);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
-  text-align: center;
-  color: #fff;
-}
-
-/* =========================
-   Siri Overlay — Color Upgrade
-   (paste at END of widget.css)
-   ========================= */
-
-/* Stronger “dim” + subtle color wash */
-#siri-overlay {
-  background:
-    radial-gradient(circle at 50% 45%, rgba(120, 60, 255, 0.18), rgba(0,0,0,0) 55%),
-    radial-gradient(circle at 30% 70%, rgba(0, 200, 255, 0.16), rgba(0,0,0,0) 55%),
-    radial-gradient(circle at 70% 70%, rgba(255, 60, 160, 0.14), rgba(0,0,0,0) 55%),
-    rgba(0,0,0,0.68);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-/* Card looks more premium */
-#siri-card {
-  border: 1px solid rgba(255,255,255,0.18);
-  background:
-    linear-gradient(180deg, rgba(20,20,30,0.72), rgba(10,10,12,0.72));
-  box-shadow:
-    0 24px 80px rgba(0,0,0,0.65),
-    0 0 0 1px rgba(255,255,255,0.06),
-    0 0 40px rgba(120,60,255,0.18);
-}
-
-/* Slightly larger, cleaner typography */
-#siri-title {
-  font-size: 13px;
-  letter-spacing: 0.4px;
-  opacity: 0.9;
-}
-
-#siri-status {
-  font-size: 14px;
-  letter-spacing: 0.2px;
-  opacity: 0.95;
-}
-
-/* Colorful orb core */
-#siri-orb {
-  width: 170px;
-  height: 170px;
-}
-
-#siri-orb::before {
-  background:
-    radial-gradient(circle at 30% 30%,
-      rgba(255,255,255,0.22),
-      rgba(255,255,255,0.06) 35%,
-      rgba(0,0,0,0) 70%),
-    radial-gradient(circle at 50% 50%,
-      rgba(0, 220, 255, 0.20),
-      rgba(120, 60, 255, 0.18) 45%,
-      rgba(255, 60, 160, 0.14) 70%,
-      rgba(0,0,0,0) 85%);
-  opacity: 1;
-}
-
-/* Make rings colorful + more dynamic */
-.orb-ring {
-  border: 2px solid rgba(255,255,255,0.10);
-  box-shadow:
-    0 0 22px rgba(0, 220, 255, 0.12),
-    0 0 26px rgba(120, 60, 255, 0.12),
-    0 0 30px rgba(255, 60, 160, 0.10);
-  animation: orbPulseColor 1.15s infinite ease-in-out;
-}
-
-.orb-ring:nth-child(1) {
-  border-color: rgba(0, 220, 255, 0.18);
-}
-.orb-ring:nth-child(2) {
-  border-color: rgba(120, 60, 255, 0.18);
-}
-.orb-ring:nth-child(3) {
-  border-color: rgba(255, 60, 160, 0.16);
-}
-
-/* More “Siri-like” pulsing */
-@keyframes orbPulseColor {
-  0%   { opacity: 0.30; transform: scale(1);   filter: saturate(1.05); }
-  45%  { opacity: 0.85; transform: scale(1.12); filter: saturate(1.35); }
-  100% { opacity: 0.30; transform: scale(1);   filter: saturate(1.05); }
-}
-
-/* Button matches the new vibe */
-#siri-stop {
-  border: 1px solid rgba(255,255,255,0.22);
-  background:
-    linear-gradient(135deg,
-      rgba(0, 220, 255, 0.10),
-      rgba(120, 60, 255, 0.12),
-      rgba(255, 60, 160, 0.10));
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.45),
-    0 0 18px rgba(120,60,255,0.18);
-}
-
-#siri-stop:hover {
-  background:
-    linear-gradient(135deg,
-      rgba(0, 220, 255, 0.14),
-      rgba(120, 60, 255, 0.16),
-      rgba(255, 60, 160, 0.14));
-}
-
-
-
-#siri-title {
-  font-size: 14px;
-  opacity: 0.85;
-  margin-bottom: 12px;
-}
-
-/* Orb container */
-#siri-orb {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 14px auto;
-  border-radius: 50%;
-  position: relative;
-  filter: drop-shadow(0 12px 22px rgba(0,0,0,0.6));
-}
-
-/* Soft glowing core */
-#siri-orb::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), rgba(255,255,255,0.05) 40%, rgba(0,0,0,0) 70%);
-  opacity: 0.8;
-}
-
-/* Animated ring layers */
-.orb-ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.08);
-  animation: orbPulse 1.3s infinite ease-in-out;
-}
-
-.orb-ring:nth-child(2) { animation-delay: 0.20s; transform: scale(1.08); }
-.orb-ring:nth-child(3) { animation-delay: 0.40s; transform: scale(1.16); }
-
-@keyframes orbPulse {
-  0%   { opacity: 0.25; transform: scale(1); }
-  50%  { opacity: 0.75; transform: scale(1.10); }
-  100% { opacity: 0.25; transform: scale(1); }
-}
-
-#siri-status {
-  font-size: 13px;
-  opacity: 0.90;
-  margin-bottom: 14px;
-}
-
-/* Optional cancel button */
-#siri-stop {
-  display: inline-block;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.18);
-  background: rgba(255,255,255,0.08);
-  color: #fff;
-  cursor: pointer;
-}
-#siri-stop:hover {
-  background: rgba(255,255,255,0.12);
-}
-
-
-#ajmal-mic.recording {
-  border-color: rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.12);
-}
-
-
-/* Header actions container */
-#ajmal-bot header {
   gap: 10px;
+  min-width: 0;
 }
+#ajmal-bot .ajmal-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.45), 0 0 12px rgba(0, 229, 255, 0.35);
+}
+#ajmal-bot .title-main {
+  display: block;
+  font-family: "Outfit", "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+}
+#ajmal-bot .title-sub { display: block; font-size: 11.5px; color: var(--wb-muted); line-height: 1.3; }
 
 #ajmal-bot header .header-actions {
   display: flex;
   gap: 8px;
   align-items: center;
+  flex-shrink: 0;
 }
 
-/* Close button */
+#ajmal-bot .body {
+  height: 340px;
+  overflow-y: auto;
+  padding: 14px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 229, 255, 0.3) transparent;
+}
+
+#ajmal-bot .footer {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid rgba(110, 170, 255, 0.18);
+  background: rgba(2, 11, 27, 0.5);
+}
+
+#ajmal-input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(110, 170, 255, 0.3);
+  background: rgba(2, 11, 27, 0.7);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+}
+#ajmal-input::placeholder { color: #6f82a0; }
+#ajmal-input:focus { outline: none; border-color: var(--wb-cyan); box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.18); }
+
+#ajmal-send, #ajmal-mic, #ajmal-mode {
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(110, 170, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+#ajmal-send {
+  background: linear-gradient(90deg, #00e5ff, #1ac8ff);
+  border-color: transparent;
+  color: #00121c;
+  font-weight: 600;
+}
+#ajmal-send:hover { box-shadow: 0 0 16px rgba(0, 229, 255, 0.45); }
+#ajmal-mic:hover, #ajmal-mode:hover { border-color: var(--wb-cyan); }
+#ajmal-mode { width: 92px; padding: 7px 8px; background: rgba(2, 11, 27, 0.6); }
+#ajmal-mode option { background: #061428; }
+
+#ajmal-bot button:focus-visible, #ajmal-bot select:focus-visible {
+  outline: 2px solid var(--wb-cyan);
+  outline-offset: 2px;
+}
+
+#ajmal-mic.recording {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- Messages ---------- */
+.msg-row { display: flex; }
+.msg-row.user { justify-content: flex-end; }
+.msg-row.bot { justify-content: flex-start; }
+
+.msg {
+  display: inline-block;
+  max-width: 85%;
+  margin: 6px 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  white-space: pre-wrap; /* preserves \n */
+  word-wrap: break-word;
+}
+.msg.user {
+  margin-left: auto;
+  text-align: left;
+  color: #00121c;
+  background: linear-gradient(135deg, #00e5ff, #3ab4ff);
+  border-bottom-right-radius: 4px;
+}
+.msg.bot {
+  margin-right: auto;
+  color: #fff;
+  background: rgba(14, 42, 84, 0.75);
+  border: 1px solid rgba(110, 170, 255, 0.22);
+  border-bottom-left-radius: 4px;
+}
+.msg.typing {
+  background: rgba(14, 42, 84, 0.5);
+  border: 1px solid rgba(110, 170, 255, 0.18);
+  color: var(--wb-muted, #a9b8d0);
+}
+
+/* Three dots typing animation */
+.typing-dots { display: inline-flex; gap: 4px; align-items: center; margin-left: 4px; }
+.typing-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00e5ff;
+  opacity: 0.35;
+  animation: vbDots 1.1s infinite;
+}
+.typing-dots span:nth-child(2) { animation-delay: 0.15s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes vbDots {
+  0%, 100% { transform: translateY(0); opacity: 0.35; }
+  50% { transform: translateY(-3px); opacity: 1; }
+}
+
+/* ---------- Close / open button ---------- */
 #ajmal-close {
   width: 34px;
   height: 34px;
@@ -388,93 +195,152 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border: 1px solid #333;
-  background: #151515;
+  border: 1px solid rgba(110, 170, 255, 0.3);
+  background: rgba(2, 11, 27, 0.55);
   color: #fff;
   cursor: pointer;
 }
+#ajmal-close:hover { border-color: var(--wb-cyan); color: var(--wb-cyan); }
 
-#ajmal-close:hover {
-  background: #1d1d1d;
+/* ---------- Minimized: compact floating launcher pill ---------- */
+#ajmal-bot.minimized {
+  width: auto;
+  border-radius: 999px;
+  cursor: pointer;
+  animation: launcherGlow 3.2s ease-in-out infinite;
 }
-
-/* Minimized state: hide body + footer */
+#ajmal-bot.minimized header {
+  padding: 6px 6px 6px 6px;
+  border-bottom: 0;
+}
 #ajmal-bot.minimized .body,
-#ajmal-bot.minimized .footer {
+#ajmal-bot.minimized .footer,
+#ajmal-bot.minimized #ajmal-mode,
+#ajmal-bot.minimized .title > span {
   display: none;
 }
+#ajmal-bot.minimized .ajmal-avatar { width: 40px; height: 40px; }
 
-/* Optional: shrink widget when minimized (header only) */
-#ajmal-bot.minimized {
-  width: 280px;
-}
-
-/* Floating “Open” pill/button */
-#ajmal-open {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 999998;
-  display: none;               /* only show when minimized */
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.22);
-  background: rgba(20,20,20,0.85);
-  color: #fff;
-  cursor: pointer;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.55);
-}
-
-#ajmal-open.active {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-#ajmal-open:hover {
-  background: rgba(30,30,30,0.9);
-}
-
-/* Bigger OPEN icon button */
-#ajmal-close.open-mode {
-  width: 56px;
-  height: 52px;
-  padding: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.22);
-  background: rgba(255,255,255,0.10);
-  color: #fff;
-}
-
-/* Bigger icon itself */
-#ajmal-close.open-mode .ajmal-open-icon {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  display: block;
-}
-
-#ajmal-close.open-mode:hover {
-  background: rgba(255,255,255,0.14);
-}
-
-/* When minimized, reuse the same button as "Open Ajmal AI" */
 #ajmal-close.open-mode {
   width: auto;
-  padding: 10px 12px;
-  font-size: 12px;
-  border-radius: 10px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border-color: transparent;
+  background: linear-gradient(90deg, #00e5ff, #1ac8ff);
+  color: #00121c;
+  font-family: "Outfit", "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
   white-space: nowrap;
-  border-color: rgba(255,255,255,0.25);
-  background: rgba(255,255,255,0.10);
+}
+#ajmal-close.open-mode:hover { color: #00121c; box-shadow: 0 0 18px rgba(0, 229, 255, 0.55); }
+
+@keyframes launcherGlow {
+  0%, 100% { box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 229, 255, 0.18), 0 0 18px rgba(0, 140, 255, 0.25); }
+  50% { box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 229, 255, 0.35), 0 0 30px rgba(0, 229, 255, 0.4); }
 }
 
-#ajmal-close.open-mode:hover {
-  background: rgba(255,255,255,0.16);
+/* ---------- Mobile ---------- */
+@media (max-width: 560px) {
+  #ajmal-bot { right: 12px; bottom: 12px; max-width: calc(100vw - 24px); }
+  #ajmal-bot:not(.minimized) { left: 12px; width: auto; }
+  #ajmal-bot .body { height: min(52vh, 380px); }
+  #ajmal-bot .title-sub { display: none; }
+  #ajmal-mode { width: 84px; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  #ajmal-bot.minimized { animation: none; }
+}
+
+/* =========================================================
+   Siri-style voice overlay (voice session)
+   ========================================================= */
+#siri-overlay {
+  position: fixed;
+  inset: 0;
+  display: none; /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 999999; /* above everything */
+  background:
+    radial-gradient(circle at 50% 45%, rgba(155, 77, 255, 0.2), rgba(0, 0, 0, 0) 55%),
+    radial-gradient(circle at 30% 70%, rgba(0, 229, 255, 0.16), rgba(0, 0, 0, 0) 55%),
+    radial-gradient(circle at 70% 70%, rgba(0, 140, 255, 0.16), rgba(0, 0, 0, 0) 55%),
+    rgba(1, 6, 16, 0.75);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+#siri-overlay.active { display: flex; }
+
+#siri-card {
+  width: min(520px, calc(100vw - 40px));
+  padding: 26px 22px;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  background: linear-gradient(180deg, rgba(10, 31, 61, 0.85), rgba(4, 15, 32, 0.85));
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 40px rgba(0, 140, 255, 0.25);
+}
+
+#siri-title {
+  font-family: "Outfit", "Inter", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+#siri-orb {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 14px auto;
+  border-radius: 50%;
+  position: relative;
+  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.6));
+}
+#siri-orb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.06) 35%, rgba(0, 0, 0, 0) 70%),
+    radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.24), rgba(0, 140, 255, 0.2) 45%, rgba(155, 77, 255, 0.16) 70%, rgba(0, 0, 0, 0) 85%);
+}
+
+.orb-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 22px rgba(0, 229, 255, 0.14), 0 0 28px rgba(155, 77, 255, 0.12);
+  animation: orbPulseColor 1.15s infinite ease-in-out;
+}
+.orb-ring:nth-child(2) { border-color: rgba(0, 140, 255, 0.2); animation-delay: 0.2s; }
+.orb-ring:nth-child(3) { border-color: rgba(155, 77, 255, 0.2); animation-delay: 0.4s; }
+
+@keyframes orbPulseColor {
+  0% { opacity: 0.3; transform: scale(1); }
+  45% { opacity: 0.85; transform: scale(1.12); }
+  100% { opacity: 0.3; transform: scale(1); }
+}
+
+#siri-status { font-size: 14px; opacity: 0.95; margin-bottom: 14px; }
+
+#siri-stop {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.14), rgba(155, 77, 255, 0.16));
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+#siri-stop:hover { border-color: #00e5ff; box-shadow: 0 0 18px rgba(0, 229, 255, 0.35); }
