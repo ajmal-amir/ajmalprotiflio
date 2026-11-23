@@ -36,6 +36,48 @@
   <link rel="stylesheet" href="widget.css">
   <script src="https://kit.fontawesome.com/a08e64bf6f.js" crossorigin="anonymous"></script>
 
+  <!-- Owner mode: the site owner's own devices are excluded from analytics and
+       the visitor count, and only they see the counter. A device is unlocked by
+       opening the site once with ?owner=<private key>; ?owner=off locks it again.
+       Only a SHA-256 hash of the key is stored here, never the key itself. -->
+  <script>
+    (function () {
+      var OWNER_HASH = "695465202fd3aa1486bfa7767088b4631caaa6d4c1ca3c9ffe928d6d5fe79ad2";
+      var FLAG = "aa_owner";
+      var isOwner = false;
+      try { isOwner = localStorage.getItem(FLAG) === "1"; } catch (e) {}
+      var params = new URLSearchParams(location.search);
+      var key = params.get("owner");
+      function cleanUrl() {
+        params.delete("owner");
+        var q = params.toString();
+        history.replaceState(null, "", location.pathname + (q ? "?" + q : "") + location.hash);
+      }
+      if (key !== null) {
+        isOwner = true; // never report a page view that carries the key
+        if (key === "off") {
+          try { localStorage.removeItem(FLAG); } catch (e) {}
+          cleanUrl();
+          location.reload();
+        } else if (window.crypto && crypto.subtle) {
+          crypto.subtle.digest("SHA-256", new TextEncoder().encode(key)).then(function (buf) {
+            var hex = Array.prototype.map.call(new Uint8Array(buf), function (b) {
+              return ("0" + b.toString(16)).slice(-2);
+            }).join("");
+            if (hex === OWNER_HASH) {
+              try { localStorage.setItem(FLAG, "1"); } catch (e) {}
+              alert("Owner mode is on for this browser: your visits are no longer tracked, and the visitor counter is visible only to you.");
+            }
+            cleanUrl();
+            location.reload();
+          });
+        }
+      }
+      window.AA_OWNER = isOwner;
+      if (isOwner) window["ga-disable-G-5X4SWZ534P"] = true;
+    })();
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5X4SWZ534P"></script>
   <script>
@@ -43,6 +85,12 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-5X4SWZ534P');
+    /* Engagement events (résumé downloads, contact sends, project views, chatbot use).
+       Never includes message text or anything a visitor typed. */
+    window.aaTrack = function (name, params) {
+      if (window.AA_OWNER) return;
+      try { gtag('event', name, params || {}); } catch (e) {}
+    };
   </script>
 
   <script type="application/ld+json">

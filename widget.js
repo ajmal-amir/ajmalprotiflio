@@ -595,6 +595,8 @@ function mount() {
 
     addMsg(body, "user", `You: ${msg}`);
     input.value = "";
+    // Analytics: counts that a question was asked, never what was asked
+    if (window.aaTrack) window.aaTrack("chatbot_message", { mode: mode.value });
 
     const typingRow = addTyping(body, "Ajmal AI is typing");
     try {
@@ -635,6 +637,7 @@ function mount() {
   }
 
   function openBot({ focus = true } = {}) {
+    if (bot.classList.contains("minimized") && window.aaTrack) window.aaTrack("chatbot_open");
     bot.classList.remove("minimized");
     setCloseButtonOpenMode(false);
     body.scrollTop = body.scrollHeight;

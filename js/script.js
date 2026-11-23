@@ -381,6 +381,7 @@ if (form) {
       await fetch(scriptURL, { method: "POST", body: fd, mode: "no-cors" });
       lastSubmitAt = now;
       msg.textContent = "Message sent successfully";
+      if (window.aaTrack) window.aaTrack("contact_form_submit");
       setTimeout(() => {
         msg.textContent = "";
       }, 5000);
@@ -444,7 +445,9 @@ document.querySelectorAll("#privateRepoModal [data-close]").forEach((el) => {
    counter. (api.countapi.xyz and hits.seeyoufarm.com have shut down.)
    - Counts each browser at most once per day (unique daily visitors).
    - Visits from localhost are never counted, so local testing doesn't inflate it.
-   - If the service is unreachable, the counter is hidden instead of showing "—". */
+   - If the service is unreachable, the counter is hidden instead of showing "—".
+   - Owner mode (see <head>): the owner's visits are never counted, and the
+     counter is shown only to the owner. Everyone else is counted but never sees it. */
 
 const COUNT_BASE = "https://abacus.jasoncameron.dev";
 const COUNT_NS = "ajmal-amir-portfolio"; // keep stable — changing it starts from 0
@@ -473,7 +476,8 @@ async function updateVisitorCounter() {
   const isLocal = ["localhost", "127.0.0.1", ""].includes(location.hostname);
   const today = new Date().toISOString().slice(0, 10);
   const lastHit = safeGetItem("count_hit_portfolio_date");
-  const shouldHit = !isLocal && (FORCE_HIT_ON_EVERY_LOAD || lastHit !== today);
+  const isOwner = window.AA_OWNER === true;
+  const shouldHit = !isOwner && !isLocal && (FORCE_HIT_ON_EVERY_LOAD || lastHit !== today);
   const endpoint = shouldHit ? hit : get;
 
   try {
@@ -483,7 +487,7 @@ async function updateVisitorCounter() {
     if (!data || typeof data.value !== "number") throw new Error("Bad payload");
     span.textContent = Number(data.value).toLocaleString();
     if (shouldHit && !FORCE_HIT_ON_EVERY_LOAD) safeSetItem("count_hit_portfolio_date", today);
-    if (wrap) wrap.hidden = false;
+    if (wrap) wrap.hidden = !isOwner;
   } catch (err) {
     // Service down, blocked by an extension, or counter not created yet
     if (wrap) wrap.hidden = true;
@@ -491,3 +495,30 @@ async function updateVisitorCounter() {
 }
 
 document.addEventListener("DOMContentLoaded", updateVisitorCounter);
+
+/* ---------------- Engagement events (Google Analytics) ----------------
+   Records which actions visitors take, so you can tell real interest
+   (résumé downloads, project views, code requests) from quick bounces.
+   Sends only the action and which item, never anything a visitor typed.
+   Skipped entirely in owner mode. */
+document.addEventListener("click", (e) => {
+  if (!window.aaTrack) return;
+  const el = e.target.closest("a, button");
+  if (!el) return;
+  const label = (el.getAttribute("aria-label") || el.textContent || "").trim().replace(/\s+/g, " ").slice(0, 80);
+  const href = el.getAttribute("href") || "";
+
+  if (href.includes("Resume.pdf")) {
+    window.aaTrack("resume_download", { link_text: label });
+  } else if (el.classList.contains("private-repo")) {
+    window.aaTrack("private_repo_request", { project: el.dataset.project || label });
+  } else if (el.dataset.detail) {
+    window.aaTrack("detail_open", { item: el.dataset.detail });
+  } else if (href.startsWith("mailto:")) {
+    window.aaTrack("email_click");
+  } else if (/^https?:\/\//.test(href) && !href.includes(location.hostname)) {
+    let host = "";
+    try { host = new URL(href).hostname.replace(/^www\./, ""); } catch { /* ignore */ }
+    window.aaTrack("outbound_click", { destination: host, link_text: label });
+  }
+});
