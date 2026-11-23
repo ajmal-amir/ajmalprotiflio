@@ -148,41 +148,54 @@
 
 <!-- ============ ABOUT ============ -->
 <section class="section about" id="about" aria-labelledby="about-title">
-  <div class="container about__grid">
-    <!-- Shows Ajmal at work first; once scrolled past, swaps to the Charlotte skyline for the rest of the visit -->
-    <figure class="about__media reveal" id="aboutMedia">
-      <picture class="about__img about__img--city" aria-hidden="true">
-        <source srcset="img/web/city.webp" type="image/webp">
-        <img src="img/cityimage.PNG" alt="Charlotte, North Carolina skyline at sunset" width="1672" height="941" loading="lazy" decoding="async">
-      </picture>
-      <picture class="about__img about__img--working">
-        <source srcset="img/web/ajmal-working.webp" type="image/webp">
-        <img src="img/ajmal%20while%20working.png" alt="Ajmal Amir working at his desk in front of multiple monitors" width="1672" height="941" loading="lazy" decoding="async">
-      </picture>
-    </figure>
+  <div class="container">
+    <div class="about-panel reveal">
+      <p class="about-panel__tag">About Me</p>
+      <div class="about-panel__inner">
+        <div class="about__visual">
+          <!-- Shows Ajmal at work first; once scrolled past, swaps to the Charlotte skyline for the rest of the visit -->
+          <figure class="about__media" id="aboutMedia">
+            <picture class="about__img about__img--city" aria-hidden="true">
+              <source srcset="img/web/city.webp" type="image/webp">
+              <img src="img/cityimage.PNG" alt="Charlotte, North Carolina skyline at sunset" width="1672" height="941" loading="lazy" decoding="async">
+            </picture>
+            <picture class="about__img about__img--working">
+              <source srcset="img/web/ajmal-working.webp" type="image/webp">
+              <img src="img/ajmal%20while%20working.png" alt="Ajmal Amir working at his desk in front of multiple monitors" width="1672" height="941" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <span class="about__reflection" aria-hidden="true"></span>
+        </div>
 
-    <div class="about__body reveal">
-      <p class="eyebrow">About Me</p>
-      <h2 id="about-title" class="section-title section-title--lg">Software Engineer with a Passion for <span class="accent">AI &amp; Automation</span></h2>
-      <p>I design and build intelligent, scalable, and human-centered software, combining strong engineering practices with AI, data, and cloud technologies. I'm a full-stack engineer with an M.S. in Computer Science (AI &amp; Robotics), experienced in Python and Node.js services, RESTful APIs, React/React Native, SQL-backed systems, and AI/RAG workflows.</p>
-      <p>I've worked across enterprise, startup, nonprofit, and academic settings, from modernization work at Wells Fargo to leading SwiftSift's engineering handoff and building a pro bono platform for my community.</p>
-      <ul class="checklist">
-        <li>M.S. in Computer Science (AI &amp; Robotics) — UNC Charlotte</li>
-        <li>B.S. in Computer Science (Software Engineering) — UNC Charlotte</li>
-        <li>Engineering Associate — Wells Fargo</li>
-        <li>Chief Software Engineer / Consultant — SwiftSift, Inc.</li>
-      </ul>
+        <div class="about__body">
+          <h2 id="about-title" class="section-title section-title--lg">Software Engineer with a Passion for <span class="accent">AI &amp; Automation</span></h2>
+          <p>I design and build intelligent, scalable, and human-centered software, combining strong engineering practices with AI, data, and cloud technologies. I'm a full-stack engineer with an M.S. in Computer Science (AI &amp; Robotics), experienced in Python and Node.js services, RESTful APIs, React/React Native, SQL-backed systems, and AI/RAG workflows.</p>
+          <p>I've worked across enterprise, startup, nonprofit, and academic settings, from modernization work at Wells Fargo to leading SwiftSift's engineering handoff and building a pro bono platform for my community.</p>
+          <hr class="about__divider">
+          <ul class="checklist">
+            <li>M.S. in Computer Science (AI &amp; Robotics) — UNC Charlotte</li>
+            <li>B.S. in Computer Science (Software Engineering) — UNC Charlotte</li>
+            <li>Engineering Associate — Wells Fargo</li>
+            <li>Chief Software Engineer / Consultant — SwiftSift, Inc.</li>
+          </ul>
+        </div>
+
+        <aside class="glance" aria-labelledby="glance-title">
+          <h3 id="glance-title" class="glance__title"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i> At a Glance</h3>
+          <ul class="glance__grid">
+            <li class="glance-card"><i class="fa-solid fa-rocket" aria-hidden="true"></i><strong>4+</strong><span>Years Experience</span></li>
+            <li class="glance-card"><i class="fa-solid fa-code" aria-hidden="true"></i><strong data-project-count>9</strong><span>Projects</span></li>
+            <li class="glance-card glance-card--violet"><i class="fa-solid fa-users" aria-hidden="true"></i><span>Collaboration<br>&amp; Leadership</span></li>
+            <li class="glance-card glance-card--violet"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>Secure &amp;<br>Reliable Solutions</span></li>
+          </ul>
+          <svg class="glance__waves" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <path d="M0 108 C80 112 150 96 215 102 C280 108 330 84 400 30" />
+            <path d="M0 114 C90 118 160 104 230 108 C290 112 345 92 400 50" />
+            <path d="M0 118 C100 120 175 112 245 114 C305 116 355 102 400 72" />
+          </svg>
+        </aside>
+      </div>
     </div>
-
-    <aside class="glance reveal" aria-labelledby="glance-title">
-      <h3 id="glance-title" class="glance__title">At a Glance</h3>
-      <ul class="glance__grid">
-        <li class="glance-card"><i class="fa-solid fa-rocket" aria-hidden="true"></i><strong>4+</strong><span>Years Experience</span></li>
-        <li class="glance-card"><i class="fa-solid fa-code" aria-hidden="true"></i><strong data-project-count>9</strong><span>Projects</span></li>
-        <li class="glance-card glance-card--violet"><i class="fa-solid fa-users" aria-hidden="true"></i><span>Collaboration<br>&amp; Leadership</span></li>
-        <li class="glance-card glance-card--violet"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>Secure &amp;<br>Reliable Solutions</span></li>
-      </ul>
-    </aside>
   </div>
 
   <!-- Tech row -->

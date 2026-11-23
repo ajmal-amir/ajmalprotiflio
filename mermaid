@@ -1,0 +1,76 @@
+flowchart TB
+  %% =========================
+  %% USERS + FRONTEND
+  %% =========================
+  U[Recruiter / Visitor<br/>(Desktop & Mobile)] -->|Opens portfolio site| P[Portfolio Website<br/>(GitHub Pages / Custom Domain)]
+  P --> W[Ajmal AI Widget (widget.js + widget.css)<br/>Modern Chat UI Embedded in Portfolio]
+
+  %% Chat UX
+  W -->|Typed message| FE_CHAT[Frontend Chat Flow]
+  FE_CHAT -->|POST /chat (JSON)| API_CHAT
+
+  %% Voice UX (Siri-style session)
+  W -->|Mic click| FE_VOICE[Frontend Voice Session Loop]
+  FE_VOICE -->|Mic permission (getUserMedia)| MIC[(Browser Microphone)]
+  FE_VOICE -->|SpeechRecognition<br/>(webkitSpeechRecognition)| STT[Browser STT Engine]
+  STT -->|Transcript| FE_VOICE
+  FE_VOICE -->|POST /chat| API_CHAT
+  FE_VOICE -->|POST /tts| API_TTS
+  API_TTS -->|base64 audio/mpeg| FE_VOICE
+  FE_VOICE -->|Play audio| SPK[(Device Speaker)]
+  FE_VOICE -->|Overlay status: Listening / Thinking / Speaking| OVERLAY[Siri-style Voice Overlay UI]
+
+  %% =========================
+  %% BACKEND (FASTAPI)
+  %% =========================
+  subgraph B[Backend API (FastAPI on Railway)]
+    API_CHAT[POST /chat<br/>Answer + Sources]:::api
+    API_TTS[POST /tts<br/>Returns base64 audio]:::api
+    API_HEALTH[GET /health<br/>Service status]:::api
+    CORS[CORS Middleware<br/>Allow GitHub Pages + ajmalamir.com]:::svc
+  end
+
+  W -->|Health check (optional)| API_HEALTH
+
+  %% =========================
+  %% RAG + LLM PIPELINE
+  %% =========================
+  API_CHAT -->|1) Retrieve relevant context| RAG[RAGStore<br/>FAISS Search + Chunk Loader]:::svc
+  RAG -->|Embed query| EMB[OpenAI Embeddings API<br/>text-embedding-3-small]:::ext
+  EMB -->|Query vector| RAG
+  RAG -->|Top-K matching chunks| CTX[Context Builder<br/>Sources + Snippets]:::svc
+
+  API_CHAT -->|2) Generate answer using context| LLM[OpenAI Chat Completions<br/>gpt-4o-mini]:::ext
+  CTX --> LLM
+  LLM -->|Answer text| API_CHAT
+
+  %% Link fallback
+  API_CHAT -->|If question is "LinkedIn/GitHub/Portfolio link"| FALLBACK[Link Fallback Extractor<br/>(Regex over links.md chunk)]:::svc
+  FALLBACK --> API_CHAT
+
+  %% =========================
+  %% TTS PIPELINE
+  %% =========================
+  API_TTS -->|Text to Speech| EL[ElevenLabs TTS API<br/>Cloned Voice ID]:::ext
+  EL -->|MP3 bytes| API_TTS
+
+  %% =========================
+  %% KNOWLEDGE BASE + INGESTION
+  %% =========================
+  subgraph K[Knowledge Base + Ingestion]
+    DOCS[Knowledge Files<br/>resume.pdf, about.md, projects.md, links.md]:::data
+    ING[ingest.py<br/>Chunking + Embeddings + Index Build]:::svc
+    STORE[(storage/<br/>index.faiss + chunks.json)]:::data
+  end
+
+  DOCS --> ING
+  ING -->|Build vectors + metadata| STORE
+  STORE -->|Loaded at API startup| RAG
+
+  %% =========================
+  %% STYLING
+  %% =========================
+  classDef api fill:#eef,stroke:#446,stroke-width:1px;
+  classDef svc fill:#efe,stroke:#464,stroke-width:1px;
+  classDef data fill:#ffe,stroke:#664,stroke-width:1px;
+  classDef ext fill:#fee,stroke:#644,stroke-width:1px;
