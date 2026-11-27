@@ -456,6 +456,23 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 .about__img img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%; }
 .about__media:hover .about__img { transform: skewX(10deg) scale(1.04); }
 .about__media.is-swapped .about__img--working { opacity: 0; }
+/* Working photo: show the whole (16:9) photo inside the tall slanted frame.
+   The photo is contained within the visible part of the frame (padding skips
+   the 70px bleed past the panel edge, the 16% overscan and the slanted
+   corners); a blurred copy of the same photo fills the space around it. */
+.about__img--working::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: url("img/web/ajmal-working.webp") center / cover no-repeat;
+  filter: blur(18px) brightness(.55) saturate(1.15);
+}
+.about__img--working img {
+  position: relative;
+  object-fit: contain;
+  object-position: 50% 50%;
+  padding: 0 calc(12.2% + 22px) 0 calc(12.2% + 92px);
+} /* keeps the face in the slanted frame */
 .about__reflection { /* soft light pooling beneath the image */
   position: absolute;
   left: 0; right: 40px; bottom: 40px;
@@ -627,6 +644,7 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
   .about__visual { order: 2; padding: 0 20px 26px; }
   .about__media { margin: 0; height: auto; min-height: 0; aspect-ratio: 16 / 10; transform: none; border-radius: 20px; }
   .about__img { inset: 0; transform: none; }
+  .about__img--working img { padding: 0; }
   .about__media:hover .about__img { transform: scale(1.03); }
   .about__reflection { left: 20px; right: 20px; bottom: 6px; height: 40px; }
   .about__body > p, .about__divider, .checklist { order: 3; margin-left: 20px; margin-right: 20px; }
