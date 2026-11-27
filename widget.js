@@ -15,7 +15,7 @@
 // - ElevenLabs voice is forced (no browser fallback unless you change FORCE_ELEVENLABS).
 
 const API_BASE =
-  "https://ajmalamirairecruiterassistant-production.up.railway.app";
+  "https://ajmalamirairecruiterassistant-production-890aa1a4.up.railway.app";
 
 // const API_BASE = "http://localhost:8000";
 
